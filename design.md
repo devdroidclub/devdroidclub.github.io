@@ -38,6 +38,42 @@ to it. Amend intentionally — the file is the rule.
 }
 ```
 
+## Variants — Blog
+Scoped divergence, not a system override. The base system stays
+grotesk-sans/single-family (see Axes above); this variant applies only to
+`/blog` — post titles, section marks, bylines, category tags. Everything
+else (spacing scale, radius tiers, motion stance, CTA voice) is inherited
+from the base system unchanged.
+
+- Source · user's own `d.d.c.` wordmark (Figma), two weights of the same
+  type family, confirmed by inspector panel — not screenshot-estimated.
+- `--serif-blog-display`: **Shippori Mincho**, weight 800 (ExtraBold),
+  letter-spacing -5%. Role: post titles, blog masthead mark. Free, Google
+  Fonts.
+- `--serif-blog-label`: **Shippori Mincho B1**, weight 700 (Bold), tracked
+  out (positive letter-spacing). Role: bylines, dates, category/meta tags.
+  Free, Google Fonts — B1 is a distinct rounded-terminal cut of the same
+  family, not just a weight variant.
+- Surface pairing observed alongside the type: a near-black card
+  (`oklch(~8% 0 0)`) with off-white ink (`#FEFDFD`, not pure white) for
+  masthead/stamp treatments; a light grey halftone/grain paper texture for
+  section backgrounds. Grain is a background-only treatment — never place
+  it under running body text (legibility/contrast).
+- Live since 2026-07-18. `/blog` ships as two new slides in `index.html`'s
+  existing hash-router deck: `slide-blog` (index — card grid) and
+  `slide-blog-post` (a single reusable template, content injected by JS
+  from a `BLOG_POSTS` data object keyed by slug — see `index.html`'s
+  script section). Cards use `--serif-blog-display` for titles and
+  `--serif-blog-label` for tag/date meta and the "Read →" link; body copy
+  stays on the base `--mono`/`--sans` stack, per the grain-never-under-text
+  rule below.
+- Autopublish path: a future publishing agent only needs to append an
+  entry to `BLOG_POSTS` (slug → `{ sourceUrl, en: {...}, ru: {...} }`) —
+  no HTML/CSS edits required per post. Keep claims sourced (a
+  `sourceLabel` + `sourceUrl` pair renders as a "Source:" line on the
+  post) — this is the site's honest-copy discipline applied to editorial
+  content, not just marketing copy.
+
 ## CTA voice
 - Primary · solid `--color-accent` fill, `--radius-pill`, generous horizontal padding (echoes the "Get in Touch" / "Be Pro" pill buttons observed in references)
 - Secondary · outline/ghost on `--color-ink`, same `--radius-pill`

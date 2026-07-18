@@ -164,12 +164,39 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.home__logo::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.65), transparent);
+  transform: skewX(-20deg);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  animation: logo-shine 5s ease-in-out infinite;
+}
+
+@keyframes logo-shine {
+  0%, 8%    { left: -75%; }
+  32%, 100% { left: 125%; }
 }
 
 .home__logo img {
   width: 100%;
   max-width: 640px;
   height: auto;
+  animation: logo-intro 900ms var(--ease-out) both;
+}
+
+@keyframes logo-intro {
+  from { opacity: 0; transform: scale(0.86) rotate(-6deg); }
+  to   { opacity: 1; transform: scale(1) rotate(0deg); }
 }
 
 .home__right {
@@ -184,6 +211,18 @@ html, body {
   font-weight: 800;
   font-size: clamp(40px, 5.6vw, 78px);
   letter-spacing: -0.01em;
+  background: linear-gradient(100deg, var(--ink) 42%, rgba(255, 255, 255, 0.95) 50%, var(--ink) 58%);
+  background-size: 220% 100%;
+  background-position: 120% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: title-shine 5s ease-in-out infinite;
+}
+
+@keyframes title-shine {
+  0%, 8%    { background-position: 120% 0; }
+  32%, 100% { background-position: -60% 0; }
 }
 
 .home__menu {
@@ -398,6 +437,20 @@ html, body {
     transition-duration: 1ms !important;
   }
   .footer a:hover { transform: none; }
+
+  .home__logo::after { display: none !important; }
+  .home__logo img {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .home__title {
+    animation: none !important;
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    color: var(--ink) !important;
+  }
 }
 
 /* ---------- mobile ---------- */
@@ -777,6 +830,22 @@ html, body {
     });
   }
 
+  function typeOnce(el) {
+    if (!el || reducedMotion) return;
+    var full = el.textContent;
+    el.textContent = '';
+    el.classList.add('is-typing');
+    var idx = 0;
+    var timer = setInterval(function () {
+      idx++;
+      el.textContent = full.slice(0, idx);
+      if (idx >= full.length) {
+        clearInterval(timer);
+        el.classList.remove('is-typing');
+      }
+    }, 16);
+  }
+
   /* ---------- i18n ---------- */
   function applyLang() {
     var dict = I18N[lang];
@@ -874,6 +943,7 @@ html, body {
   /* ---------- init ---------- */
   applyLang();
   fromHash();
+  typeOnce(document.querySelector('.chrome__brand'));
 })();
 
 </script>

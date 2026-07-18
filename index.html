@@ -895,20 +895,23 @@ html, body {
 
 /* ---------- mobile ---------- */
 @media (max-width: 860px) {
-  :root { --pad: 6px; --chrome-h: 50px; }
+  :root { --pad: 14px; --chrome-h: 50px; }
 
   .chrome__lang { position: static; transform: none; }
   .chrome { gap: 12px; }
   .chrome__brand { font-size: 14px; }
 
-  .slide { padding: 12px 10px; }
+  .slide { padding: 22px 18px; }
 
-  .slide--home { flex-direction: column; justify-content: center; gap: 14px; }
-  .home__logo img { max-width: 320px; }
-  .home__right { gap: 12px; align-items: flex-start; }
-  .home__title { font-size: 34px; }
-  .home__menu a { font-size: 18px; }
-  .home__cta { padding: 10px 16px; }
+  .slide--home { flex-direction: column; justify-content: center; gap: 20px; }
+  .home__logo { flex: 0 0 auto; }
+  .home__logo img { max-width: 150px; }
+  .home__right { gap: 10px; align-items: flex-start; }
+  .home__title { font-size: 30px; }
+  .home__pitch { font-size: 14px; line-height: 1.5; max-width: 100%; }
+  .home__menu { gap: 8px; }
+  .home__menu a { font-size: 17px; }
+  .home__cta { padding: 10px 16px; margin-top: 4px; }
 
   .section__head { flex-direction: column; align-items: flex-start; gap: 7px; }
   .section__brand img { height: 44px; }

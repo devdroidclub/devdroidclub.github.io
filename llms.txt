@@ -1,0 +1,19 @@
+# devdroid.club (d.d.c.)
+
+> Full-cycle digital production studio: analysis, designing, programming, testing, publishing, promoting, support. Single-page site with client-side hash routing — all section content is present in the initial HTML document, nothing is loaded dynamically.
+
+## Sections
+- [Home](https://devdroidclub.github.io/#/): Studio overview and navigation
+- [Analysis](https://devdroidclub.github.io/#/analysis): Customer development, UX research, journey mapping, system analytics, business process mapping
+- [Designing](https://devdroidclub.github.io/#/designing): Interface design, experience patterns, journey visuals, information architecture
+- [Programming](https://devdroidclub.github.io/#/programming): Front-end engineering, back-end systems and APIs, DevOps (CI/CD, infrastructure, monitoring)
+- [Testing](https://devdroidclub.github.io/#/testing): Functional, system, load/performance, regression and unit testing
+- [Publishing](https://devdroidclub.github.io/#/publishing): App Store/Google Play launch, CI/CD and web deployment, release notes and docs
+- [Promoting](https://devdroidclub.github.io/#/promoting): ASO, SEO and content, analytics and conversion tracking, social launch campaigns
+- [Support](https://devdroidclub.github.io/#/support): Bug fixing and maintenance, feature requests and backlog, SLA-backed monitoring, user feedback
+- [Portfolio](https://devdroidclub.github.io/#/portfolio): Case studies — Ice Arena Solntsevo (arena-solntsevo.ru, sports complex, B2C) and Pacific Logistics / TLC (pacificlog.ru, logistics, B2B). Both are full-cycle engagements: client supplied business goals and a brand book, the studio delivered analysis, UX, design, build and launch.
+
+## Contact
+- GitHub: https://github.com/devdroidclub
+- Telegram: https://t.me/stasivstas
+- Email: stas.stasiv@gmail.com

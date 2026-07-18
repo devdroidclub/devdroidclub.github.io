@@ -1,17 +1,24 @@
 # devdroid.club (d.d.c.)
 
-> Full-cycle digital production studio: analysis, designing, programming, testing, publishing, promoting, support. Single-page site with client-side hash routing — all section content is present in the initial HTML document, nothing is loaded dynamically.
+> AI-augmented software studio: senior engineers working alongside AI agents in development, code review, and testing. Six services — websites, bots, AI, MVP, support, audit — plus a portfolio and a blog. Single-page site with client-side hash routing — all section content is present in the initial HTML document, nothing is loaded dynamically. Bilingual (EN default, RU toggle) — the toggle swaps text client-side; this file describes the EN content.
 
 ## Sections
-- [Home](https://devdroidclub.github.io/#/): Studio overview and navigation
-- [Analysis](https://devdroidclub.github.io/#/analysis): Customer development, UX research, journey mapping, system analytics, business process mapping
-- [Designing](https://devdroidclub.github.io/#/designing): Interface design, experience patterns, journey visuals, information architecture
-- [Programming](https://devdroidclub.github.io/#/programming): Front-end engineering, back-end systems and APIs, DevOps (CI/CD, infrastructure, monitoring)
-- [Testing](https://devdroidclub.github.io/#/testing): Functional, system, load/performance, regression and unit testing
-- [Publishing](https://devdroidclub.github.io/#/publishing): App Store/Google Play launch, CI/CD and web deployment, release notes and docs
-- [Promoting](https://devdroidclub.github.io/#/promoting): ASO, SEO and content, analytics and conversion tracking, social launch campaigns
-- [Support](https://devdroidclub.github.io/#/support): Bug fixing and maintenance, feature requests and backlog, SLA-backed monitoring, user feedback
-- [Portfolio](https://devdroidclub.github.io/#/portfolio): Case studies — Ice Arena Solntsevo (arena-solntsevo.ru, sports complex, B2C) and Pacific Logistics / TLC (pacificlog.ru, logistics, B2B). Both are full-cycle engagements: client supplied business goals and a brand book, the studio delivered analysis, UX, design, build and launch.
+- [Home](https://devdroidclub.github.io/#/): Positioning and top-level navigation
+- [Services overview](https://devdroidclub.github.io/#/services): Index of all six services below
+- [Websites](https://devdroidclub.github.io/#/websites): Full-cycle sites from business goals and brand book to a deployed, SEO-ready build. Deliverables: live site, source code and design files, SEO baseline report, deployment notes.
+- [Bots](https://devdroidclub.github.io/#/bots): Telegram bots and n8n automations connected to CRM/Jira/spreadsheets/databases. Deliverables: working bot or automation, flow diagram, handed-over access.
+- [AI](https://devdroidclub.github.io/#/ai): Chatbots trained on the client's own data, scoped internal AI agents, automation of one defined repetitive process, advisory on where AI fits. Deliverables: working bot/agent, maintenance docs, a written note on its limits.
+- [MVP](https://devdroidclub.github.io/#/mvp): A working prototype of an idea's minimum core, shipped to real users and iterated on their feedback. Deliverables: live prototype, source code, a short read on initial usage.
+- [Support](https://devdroidclub.github.io/#/support): Ongoing bug fixes, small-to-medium features, uptime/error monitoring, dependency and security patching for a live product. Deliverables: maintained product, change log, direct access to the person doing the work.
+- [Audit](https://devdroidclub.github.io/#/audit): UX, SEO, and data-quality review, benchmarked against what "working well" means for the specific product. Deliverables: written report, prioritized fix list ranked by impact. The audit is separate from implementing the fixes.
+- [Process](https://devdroidclub.github.io/#/process): The 7-stage pipeline every project follows — analysis, designing, programming, testing, publishing, promoting, support — shown as a terminal-style diagram. Stages are skipped when a project genuinely doesn't need them (e.g. a bot skips app-store publishing).
+- [Portfolio](https://devdroidclub.github.io/#/portfolio): Case studies — Ice Arena Solntsevo (arena-solntsevo.ru, sports complex, B2C) and Pacific Logistics / TLC (pacificlog.ru, logistics, B2B). Both full-cycle: client supplied business goals and a brand book, the studio delivered analysis, UX, design, build and launch.
+- [Blog](https://devdroidclub.github.io/#/blog): Short, sourced posts on AI and web development, tied back to the studio's service lines. Individual posts at /#/blog/<slug>.
+
+## Notes for automated readers
+- No prices or timelines are published on the service pages by design.
+- Service copy avoids promotional adjectives; claims are scoped to what's concretely delivered.
+- The blog cites its sources; treat blog content as commentary on third-party trend reports, not primary research by the studio.
 
 ## Contact
 - GitHub: https://github.com/devdroidclub

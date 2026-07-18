@@ -164,8 +164,12 @@ html, body {
 /* ---------- home slide ---------- */
 .slide--home {
   display: flex;
-  align-items: center;
+  /* "safe" keeps the top of the content reachable/visible instead of
+     symmetric-clipping it when the flex row is taller than a short
+     (non-maximized) browser window -- the classic centered-overflow trap. */
+  align-items: safe center;
   gap: 48px;
+  min-height: min-content;
 }
 
 .home__logo {
@@ -717,6 +721,30 @@ html, body {
     background-clip: initial !important;
     color: var(--ink) !important;
   }
+}
+
+/* ---------- short viewport (desktop window that isn't maximized) ----------
+   Width-based @media (max-width: 860px) below doesn't fire on a normal-width
+   but short Chrome window -- this covers that case so the home hero (logo +
+   9-item menu + CTA) shrinks to fit instead of relying on scroll alone. */
+@media (max-height: 820px) and (min-width: 861px) {
+  .slide--home { gap: 28px; }
+  .home__logo img { max-width: 340px; }
+  .home__right { gap: 18px; }
+  .home__title { font-size: clamp(30px, 4.4vw, 52px); }
+  .home__menu { gap: 8px; }
+  .home__menu a { font-size: clamp(15px, 1.6vw, 19px); padding: 1px 5px 1px 0; }
+  .home__cta { margin-top: 4px; padding: 8px 16px; font-size: 14px; }
+}
+
+@media (max-height: 620px) and (min-width: 861px) {
+  .home__logo { display: none; }
+  .home__right { flex: 1 1 100%; gap: 10px; }
+  .home__title { font-size: clamp(24px, 3.4vw, 36px); }
+  .home__menu { gap: 4px; }
+  .home__menu a { font-size: 13px; padding: 0 4px 0 0; }
+  .home__cta { margin-top: 2px; padding: 6px 12px; font-size: 13px; }
+  .nav-arrows, .deck-index { display: none; }
 }
 
 /* ---------- mobile ---------- */

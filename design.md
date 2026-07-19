@@ -33,6 +33,7 @@ to it. Amend intentionally — the file is the rule.
   --dur-fast: 180ms;  --dur-base: 240ms;  --dur-slow: 320ms;
 
   --radius-card:  8px;   /* content surfaces: cards, panels, small icon tiles */
+  --radius-dock: 12px;   /* persistent floating contact dock */
   --radius-pill:  999px; /* interactive controls: buttons, tags, active-tab chips */
   --radius-input: 6px;   /* form inputs, small controls */
   --radius-frame: 0px;   /* structural chrome: page frame, dividers, large photo/content blocks — deliberately sharp */
@@ -89,6 +90,8 @@ from the base system unchanged.
 - Blue accent marks the current state, primary action, or selected item only and stays below roughly 5% of a viewport.
 - Service cards are deliberately hierarchical: primary directions may span wider tracks; equal-card matrices are not the default.
 - Portfolio entries must foreground concrete scope and deliverables. Use real screenshots only when available; never fabricate product UI or outcomes.
+- Display headings may become monumental and tightly tracked, but remain left/right anchored rather than centred. Their job is brand presence, not decoration.
+- The persistent contact/footer control is a compact floating dock inside the sharp outer frame; it must not expand back into a generic full-width footer bar.
 
 ## Motion stance
 - Conservative — 1 reveal primitive at a time (fade or slide), no bounce/overshoot. No motion library was observed in any studied source (all static screenshots) — default to CSS-only transitions.
@@ -96,7 +99,7 @@ from the base system unchanged.
 
 ## Provenance
 - Source mode: image (6 user-attached screenshots)
-- Sources: Balenciaga.com (nav flyout + hero), Awwwards.com (Site of the Day template + jobs card grid), Cantor8.io (hero, ×3 near-duplicate captures)
+- Sources: Balenciaga.com (nav flyout + hero), Awwwards.com (Site of the Day template + jobs card grid), Cantor8.io (hero, ×3 near-duplicate captures), Adoratorio Studio's Awwwards profile capture (monumental grotesk display + compact floating dock)
 - Date: 2026-07-18
 - Attestation: image mode — emitted without asking, per protocol (user owns the screenshots)
 - Confidence: tokens are a considered synthesis estimated from source-image colour bands and structural patterns, not extracted CSS (these are third-party sites, not project code). Fonts are role-based with named candidates from the Hallmark canon, not confirmed exact faces. Radius and structural rhythm observations are direct/accurate — they came from pixels, not markdown.

@@ -26,7 +26,7 @@
 <style>
 /* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V5
  * genre: modern-minimal · macrostructure: Workbench + Catalogue + Long Document
- * theme: studied-DNA (project references) · nav: terminal chrome · footer: status rail
+ * theme: studied-DNA (Adoratorio/Awwwards capture + project references) · nav: terminal chrome · footer: floating dock
  * design-system: design.md · designed-as-app
  * contrast: pass (40–41) · honest: pass (46) · chrome: pass (47)
  * tokens: pass (48) · responsive: static pass; rendered visual QA pending
@@ -52,7 +52,7 @@
   --frame-w: 2px;
   --chrome-h: 56px;
   --pad: 24px;
-  --footer-h: 64px;
+  --footer-h: 76px;
   --font-mono: 'Hack', 'DejaVu Sans Mono', ui-monospace, 'JetBrains Mono', Menlo, Consolas, monospace;
   --font-display: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-body: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -66,6 +66,7 @@
   --space-lg: 32px;
   --space-xl: 48px;
   --radius-card: 8px;
+  --radius-dock: 12px;
   --radius-control: 999px;
   /* blog-only serif pair — from the d.d.c. wordmark DNA, scoped to /blog, not the base system */
   --serif-blog-display: 'Shippori Mincho', serif;   /* ExtraBold 800, letter-spacing -5% — post titles, section marks */
@@ -918,8 +919,10 @@ a.tbg__item:focus-visible { background: var(--ink); color: var(--paper); outline
 /* ---------- footer ---------- */
 .footer {
   position: absolute;
-  left: 0; right: 0; bottom: 0;
-  height: var(--footer-h);
+  left: 50%; right: auto; bottom: 10px;
+  width: min(720px, calc(100% - 28px));
+  height: 56px;
+  transform: translateX(-50%);
   background: var(--ink);
   display: flex;
   align-items: center;
@@ -928,6 +931,8 @@ a.tbg__item:focus-visible { background: var(--ink); color: var(--paper); outline
   padding: 0 20px;
   z-index: 10;
   font-family: var(--font-mono);
+  border: 1px solid var(--color-rule-strong);
+  border-radius: var(--radius-dock);
 }
 
 .footer__status, .footer__links { display: flex; align-items: center; gap: 12px; }
@@ -1025,9 +1030,10 @@ a.tbg__item:focus-visible { background: var(--ink); color: var(--paper); outline
   background: none;
   color: var(--ink);
   animation: none;
+  font-size: clamp(52px, 7.4vw, 108px);
   font-weight: 600;
-  letter-spacing: -0.045em;
-  line-height: 0.96;
+  letter-spacing: -0.065em;
+  line-height: 0.92;
   overflow-wrap: anywhere;
 }
 
@@ -1059,7 +1065,18 @@ a.tbg__item:hover, a.tbg__item:focus-visible { background: transparent; color: v
   color: var(--paper);
 }
 
-.section__title { font-weight: 500; letter-spacing: -0.045em; line-height: 1; overflow-wrap: anywhere; min-width: 0; }
+.section__head { align-items: flex-start; }
+.section__brand { padding-top: var(--space-2xs); }
+.section__title {
+  max-width: 10ch;
+  font-family: var(--font-display);
+  font-size: clamp(52px, 7vw, 108px);
+  font-weight: 600;
+  letter-spacing: -0.065em;
+  line-height: 0.92;
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
 .section__crumb { color: var(--color-ink-2); opacity: 1; }
 .section__note { background: var(--paper-2); border: 1px solid var(--rule); border-radius: var(--radius-card); }
 
@@ -1085,7 +1102,7 @@ a.tbg__item:hover, a.tbg__item:focus-visible { background: transparent; color: v
   color: var(--color-ink-2);
 }
 .service-card:hover { border-color: var(--color-rule-strong); }
-.service-card__title { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.025em; }
+.service-card__title { font-family: var(--font-display); font-weight: 600; font-size: clamp(22px, 2.2vw, 34px); letter-spacing: -0.045em; line-height: 1; }
 .service-card__teaser { color: var(--color-ink-2); opacity: 1; }
 .service-card__link { border-top-color: var(--rule); }
 .service-card__link:hover, .service-card__link:focus-visible { background: transparent; color: var(--accent); }
@@ -1107,7 +1124,7 @@ a.tbg__item:hover, a.tbg__item:focus-visible { background: transparent; color: v
 .portfolio-grid { grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.85fr); gap: var(--space-sm); }
 .portfolio-card { border: 1px solid var(--rule); border-radius: var(--radius-card); background: var(--paper-2); padding: var(--space-md); }
 .portfolio-card:first-child { background: var(--paper); border-color: var(--color-rule-strong); }
-.portfolio-card__title { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.025em; }
+.portfolio-card__title { font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 2.5vw, 38px); letter-spacing: -0.045em; line-height: 1.05; }
 .portfolio-card__what, .portfolio-card__role { color: var(--color-ink-2); opacity: 1; }
 .portfolio-card__list li { padding: 5px 0; border-top: 1px solid var(--rule); }
 .portfolio-card__link-row { border-top-color: var(--rule); }
@@ -1273,11 +1290,12 @@ a.tbg__item:hover, a.tbg__item:focus-visible { background: transparent; color: v
   .home__cta { padding: 10px 16px; margin-top: 4px; }
 
   .section__head { flex-direction: column; align-items: flex-start; gap: 7px; }
+  .section__brand { padding-top: 0; }
   .section__brand img { height: 44px; }
   .section__brand span { font-size: 18px; }
   .section__title-wrap { align-items: flex-start; }
   .section__title-wrap .section__title { text-align: left; }
-  .section__title { text-align: left; font-size: 30px; }
+  .section__title { max-width: 100%; text-align: left; font-size: clamp(36px, 12vw, 56px); line-height: 0.95; }
   .section__crumb { font-size: 11px; }
   .section__list { margin-top: 3vh; gap: 9px; }
   .deck-index { display: none; }

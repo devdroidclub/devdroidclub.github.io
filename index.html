@@ -2644,6 +2644,37 @@ a.tbg__item:hover, a.tbg__item:focus-visible { background: transparent; color: v
     else if (e.key === 'Escape') { overlay.classList.contains('is-open') ? closeOverlay() : (postOpen ? (location.hash = '#/blog') : goTo('home')); }
   });
 
+  /* Desktop wheel / trackpad navigation. Long slides keep their native
+     vertical scroll; deck navigation starts only at the content boundary. */
+  var wheelDelta = 0;
+  var wheelResetTimer = null;
+  var wheelLockedUntil = 0;
+
+  document.addEventListener('wheel', function (e) {
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    if (postOpen || overlay.classList.contains('is-open')) return;
+    if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+
+    var activeSlide = slides[SECTIONS[current]];
+    if (!activeSlide) return;
+
+    var atTop = activeSlide.scrollTop <= 2;
+    var atBottom = activeSlide.scrollTop + activeSlide.clientHeight >= activeSlide.scrollHeight - 2;
+    if ((e.deltaY < 0 && !atTop) || (e.deltaY > 0 && !atBottom)) return;
+
+    e.preventDefault();
+    if (Date.now() < wheelLockedUntil) return;
+
+    wheelDelta += e.deltaY;
+    clearTimeout(wheelResetTimer);
+    wheelResetTimer = setTimeout(function () { wheelDelta = 0; }, 180);
+
+    if (Math.abs(wheelDelta) < 70) return;
+    wheelDelta > 0 ? next() : prevS();
+    wheelDelta = 0;
+    wheelLockedUntil = Date.now() + 650;
+  }, { passive: false });
+
   var touchX = null;
   document.addEventListener('touchstart', function (e) { touchX = e.touches[0].clientX; }, { passive: true });
   document.addEventListener('touchend', function (e) {

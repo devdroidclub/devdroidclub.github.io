@@ -65,8 +65,12 @@ from the base system unchanged.
   from a `BLOG_POSTS` data object keyed by slug — see `index.html`'s
   script section). Cards use `--serif-blog-display` for titles and
   `--serif-blog-label` for tag/date meta and the "Read →" link; body copy
-  stays on the base `--mono`/`--sans` stack, per the grain-never-under-text
-  rule below.
+  uses the neutral grotesk `--font-blog-body` (currently Inter). Running
+  text is capped at roughly 680px, 17–19px with generous leading; mono is
+  reserved for paths, controls, and technical metadata. The article uses
+  the Long Document macrostructure inside the existing framed hash-router.
+- Reading mode, revised 2026-07-19: every post exposes native sharing with
+  copy-link and Telegram fallbacks. Grain remains outside running text.
 - Autopublish path: a future publishing agent only needs to append an
   entry to `BLOG_POSTS` (slug → `{ sourceUrl, en: {...}, ru: {...} }`) —
   no HTML/CSS edits required per post. Keep claims sourced (a

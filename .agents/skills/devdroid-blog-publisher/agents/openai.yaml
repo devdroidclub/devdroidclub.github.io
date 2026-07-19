@@ -1,0 +1,4 @@
+interface:
+  display_name: "Devdroid Blog Publisher"
+  short_description: "Research and publish sourced d.d.c. blog posts"
+  default_prompt: "Use $devdroid-blog-publisher to research and prepare the next bilingual d.d.c. blog post."

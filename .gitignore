@@ -2,3 +2,17 @@
 .claude/
 .agents/
 .hallmark/
+
+# Share the d.d.c. blog workflow; keep all other local agent state ignored.
+!.claude/
+.claude/*
+!.claude/agents/
+.claude/agents/*
+!.claude/agents/devdroid-blog-editor.md
+
+!.agents/
+.agents/*
+!.agents/skills/
+.agents/skills/*
+!.agents/skills/devdroid-blog-publisher/
+!.agents/skills/devdroid-blog-publisher/**

@@ -3,7 +3,7 @@
 {
   "name": "Devdroid Club Site",
   "schemaVersion": 1,
-  "description": "Прод-версия сайта devdroid.club: одностраничник-презентация AI-augmented студии с витриной услуг (websites/bots/ai/mvp/support/audit), слайдом process (7-этапный пайплайн) и портфолио, EN/RU, оригинальный логотип d.d.c.",
+  "description": "Прод-версия сайта devdroid.club: одностраничник-презентация продуктовой студии с витриной услуг (product/websites/bots/ai/mvp/support/audit), слайдом process (7-этапный пайплайн) и портфолио, EN/RU, оригинальный логотип d.d.c.",
   "mcpTools": [],
   "mcpServerNames": []
 }
@@ -12,10 +12,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>devdroid.club — d.d.c. | websites, bots, AI automation, MVPs</title>
-<meta name="description" content="d.d.c. — devdroid.club. AI-augmented software studio: websites, Telegram bots and automations, AI chatbots and internal agents, MVPs, ongoing support, and UX/SEO/data audits.">
+<title>devdroid.club — d.d.c. | product, websites, bots, AI, MVP</title>
+<meta name="description" content="d.d.c. — devdroid.club. Product-minded software studio: product strategy, websites, Telegram bots and automations, AI chatbots and agents, MVPs, ongoing support, and audits.">
 <meta property="og:title" content="devdroid.club — d.d.c.">
-<meta property="og:description" content="AI-augmented software studio: websites, Telegram bots and automations, AI chatbots and internal agents, MVPs, ongoing support, and UX/SEO/data audits.">
+<meta property="og:description" content="Product-minded software studio: product strategy, websites, Telegram bots and automations, AI chatbots and agents, MVPs, ongoing support, and audits.">
 <meta property="og:image" content="https://devdroid.club/thumbnail.png">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -636,6 +636,113 @@ html, body {
 .service__list li { overflow-wrap: anywhere; }
 .service__list .sl { margin-right: 10px; }
 
+.service__subtitle {
+  font-family: var(--mono);
+  font-size: 14px;
+  opacity: 0.6;
+  margin-top: -18px;
+}
+
+.service__bridge {
+  display: inline-block;
+  align-self: flex-start;
+  border: 1px solid rgba(17, 17, 17, 0.25);
+  padding: 10px 14px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink);
+  text-decoration: none;
+  max-width: 560px;
+  transition: background 0.15s var(--ease-out), color 0.15s var(--ease-out);
+}
+
+.service__bridge:hover,
+.service__bridge:focus-visible { background: var(--ink); color: var(--paper); outline: none; }
+
+.service__cta {
+  align-self: flex-start;
+  margin-top: 4px;
+  padding: 12px 20px;
+  border: 2px solid var(--ink);
+  font-family: var(--mono);
+  font-size: clamp(15px, 1.3vw, 18px);
+  color: var(--ink);
+  text-decoration: none;
+  transition: background 0.15s var(--ease-out), color 0.15s var(--ease-out);
+}
+
+.service__cta:hover,
+.service__cta:focus-visible { background: var(--ink); color: var(--paper); outline: none; }
+
+.portfolio-card__tag {
+  align-self: flex-start;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 2px 6px;
+  border: 1px solid rgba(17, 17, 17, 0.3);
+  transition: background 0.15s var(--ease-out), color 0.15s var(--ease-out);
+}
+
+.portfolio-card__tag:hover,
+.portfolio-card__tag:focus-visible { background: var(--ink); color: var(--paper); outline: none; }
+
+/* ---------- think / build / grow (home) ---------- */
+.tbg {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+
+.tbg__stage {
+  border: var(--frame-w) solid var(--ink);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.tbg__label {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  opacity: 0.5;
+}
+
+a.tbg__item,
+.tbg__item {
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 1px 3px;
+  align-self: flex-start;
+  transition: background 0.15s var(--ease-out), color 0.15s var(--ease-out);
+}
+
+a.tbg__item:hover,
+a.tbg__item:focus-visible { background: var(--ink); color: var(--paper); outline: none; }
+
+.tbg__item--static { opacity: 0.55; }
+
+.tbg__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+  font-family: var(--mono);
+  font-size: 16px;
+  opacity: 0.4;
+  flex: 0 0 auto;
+}
+
 /* ---------- process pipeline (ASCII/terminal infographic) ---------- */
 .pipeline {
   display: flex;
@@ -894,19 +1001,21 @@ html, body {
 @media (max-height: 820px) and (min-width: 861px) {
   .slide--home { gap: 28px; }
   .home__logo img { max-width: 340px; }
-  .home__right { gap: 18px; }
+  .home__right { gap: 14px; }
   .home__title { font-size: clamp(30px, 4.4vw, 52px); }
-  .home__menu { gap: 8px; }
-  .home__menu a { font-size: clamp(15px, 1.6vw, 19px); padding: 1px 5px 1px 0; }
+  .tbg__stage { padding: 8px 10px; gap: 4px; }
+  .tbg__item { font-size: 13px; }
   .home__cta { margin-top: 4px; padding: 8px 16px; font-size: 14px; }
 }
 
 @media (max-height: 620px) and (min-width: 861px) {
   .home__logo { display: none; }
-  .home__right { flex: 1 1 100%; gap: 10px; }
+  .home__right { flex: 1 1 100%; gap: 8px; }
   .home__title { font-size: clamp(24px, 3.4vw, 36px); }
-  .home__menu { gap: 4px; }
-  .home__menu a { font-size: 13px; padding: 0 4px 0 0; }
+  .home__pitch { font-size: 13px; }
+  .tbg__stage { padding: 6px 8px; gap: 3px; }
+  .tbg__label { font-size: 10px; }
+  .tbg__item { font-size: 12px; }
   .home__cta { margin-top: 2px; padding: 6px 12px; font-size: 13px; }
   .nav-arrows, .deck-index { display: none; }
 }
@@ -927,8 +1036,10 @@ html, body {
   .home__right { gap: 10px; align-items: flex-start; }
   .home__title { font-size: 30px; }
   .home__pitch { font-size: 14px; line-height: 1.5; max-width: 100%; }
-  .home__menu { gap: 8px; }
-  .home__menu a { font-size: 17px; }
+  .tbg { flex-direction: column; width: 100%; }
+  .tbg__stage { padding: 10px 12px; }
+  .tbg__arrow { display: none; }
+  .service__bridge { max-width: 100%; }
   .home__cta { padding: 10px 16px; margin-top: 4px; }
 
   .section__head { flex-direction: column; align-items: flex-start; gap: 7px; }
@@ -990,6 +1101,7 @@ html, body {
     </a>
     <ul>
     <li><a href="#/services" data-goto="services" data-i18n="menu.services">/services</a></li>
+    <li><a href="#/product" data-goto="product" data-i18n="menu.product">/product</a></li>
     <li><a href="#/websites" data-goto="websites" data-i18n="menu.websites">/websites</a></li>
     <li><a href="#/bots" data-goto="bots" data-i18n="menu.bots">/bots</a></li>
     <li><a href="#/ai" data-goto="ai" data-i18n="menu.ai">/ai</a></li>
@@ -1024,13 +1136,28 @@ html, body {
     </div>
     <div class="home__right">
       <h1 class="home__title">devdroid.club</h1>
-      <p class="home__pitch" data-i18n="home.pitch">An AI-augmented studio: senior engineers working alongside AI agents in development, code review, and testing. Agency-grade process. Small-team speed.</p>
-      <ul class="home__menu">
-        <li><a href="#/services" data-goto="services" data-i18n="menu.services">/services</a></li>
-        <li><a href="#/process" data-goto="process" data-i18n="menu.process">/process</a></li>
-        <li><a href="#/portfolio" data-goto="portfolio" data-i18n="menu.portfolio">/portfolio</a></li>
-        <li><a href="#/blog" data-goto="blog" data-i18n="menu.blog">/blog</a></li>
-      </ul>
+      <p class="home__pitch" data-i18n="home.pitch">We're a product-minded studio. You bring a goal — more leads, less manual work, an idea to validate. We help you decide what's worth building, build it AI-accelerated, and keep improving it after launch with real data.</p>
+      <div class="tbg">
+        <div class="tbg__stage">
+          <div class="tbg__label" data-i18n="home.tbg.think">THINK</div>
+          <a class="tbg__item" href="#/product" data-goto="product" data-i18n="title.product">product</a>
+        </div>
+        <span class="tbg__arrow" aria-hidden="true">&rarr;</span>
+        <div class="tbg__stage">
+          <div class="tbg__label" data-i18n="home.tbg.build">BUILD</div>
+          <a class="tbg__item" href="#/websites" data-goto="websites" data-i18n="title.websites">websites</a>
+          <a class="tbg__item" href="#/bots" data-goto="bots" data-i18n="title.bots">bots</a>
+          <a class="tbg__item" href="#/ai" data-goto="ai" data-i18n="title.ai">ai</a>
+          <a class="tbg__item" href="#/mvp" data-goto="mvp" data-i18n="title.mvp">mvp</a>
+        </div>
+        <span class="tbg__arrow" aria-hidden="true">&rarr;</span>
+        <div class="tbg__stage">
+          <div class="tbg__label" data-i18n="home.tbg.grow">GROW</div>
+          <a class="tbg__item" href="#/support" data-goto="support" data-i18n="title.support">support</a>
+          <a class="tbg__item" href="#/audit" data-goto="audit" data-i18n="title.audit">audit</a>
+          <span class="tbg__item tbg__item--static" data-i18n="home.tbg.iteration">data-driven iteration</span>
+        </div>
+      </div>
       <a class="home__cta" href="mailto:stas.stasiv@gmail.com" data-i18n="home.cta">&rarr; start a project</a>
     </div>
   </section>
@@ -1048,6 +1175,11 @@ html, body {
       </div>
     </div>
     <div class="services-grid">
+      <article class="service-card">
+        <h3 class="service-card__title" data-i18n="title.product">product</h3>
+        <p class="service-card__teaser" data-i18n="services.card.product">Turning a business goal into a scoped, spec'd plan — before any design or development starts.</p>
+        <a class="service-card__link" href="#/product" data-goto="product" data-i18n="services.viewlabel">View &rarr;</a>
+      </article>
       <article class="service-card">
         <h3 class="service-card__title" data-i18n="title.websites">websites</h3>
         <p class="service-card__teaser" data-i18n="services.card.websites">Full-cycle sites — from business goals and brand book to a deployed, SEO-ready build.</p>
@@ -1081,6 +1213,42 @@ html, body {
     </div>
   </section>
 
+  <!-- PRODUCT -->
+  <section class="slide" id="slide-product">
+    <div class="section__head">
+      <a class="section__brand" href="#/" data-goto="home">
+        <img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSI1NTQgODYyIDE0OTYgMTAwOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTA0NC41IiBjeT0iMTM1Mi41IiByPSI0ODAuNSIgZmlsbD0iIzA5MDAwMCIvPgo8cGF0aCBkPSJNMTQ1NSAxMzUxLjVDMTQ1NSAxNTc3LjExIDEyNzEuNjYgMTc2MCAxMDQ1LjUgMTc2MEM4MTkuMzM5IDE3NjAgNjM2IDE1NzcuMTEgNjM2IDEzNTEuNUM2MzYgMTEyNS44OSA4MTkuMzM5IDk0MyAxMDQ1LjUgOTQzQzEyNzEuNjYgOTQzIDE0NTUgMTEyNS44OSAxNDU1IDEzNTEuNVoiIGZpbGw9IiNGRkZGRkYiLz4KPGVsbGlwc2UgY3g9IjEwMjUuNSIgY3k9IjEzNzQiIHJ4PSIzNTguNSIgcnk9IjExOSIgZmlsbD0iIzA5MDAwMCIvPgo8ZWxsaXBzZSBjeD0iMTAyMCIgY3k9IjEzNjkuNSIgcng9IjI0NiIgcnk9IjgxLjUiIGZpbGw9IiNGRkZGRkYiLz4KPHJlY3QgeD0iNjY3IiB5PSIxMzUyIiB3aWR0aD0iNzE3IiBoZWlnaHQ9IjQzIiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9IjEyMDMiIHk9Ijk4NiIgd2lkdGg9IjI4MSIgaGVpZ2h0PSI0MyIgZmlsbD0iI0ZGRkZGRiIvPgo8cmVjdCB4PSIxMzE2IiB5PSIxMDI5IiB3aWR0aD0iNzAiIGhlaWdodD0iMzE5IiBmaWxsPSIjMEEwMDAwIi8+CjxyZWN0IHdpZHRoPSIyNS4xNTYyIiBoZWlnaHQ9IjUzOS40NzciIHRyYW5zZm9ybT0ibWF0cml4KDAuMDA4Nzk0OCAtMC45OTk5NjEgLTAuOTk5OTYxIC0wLjAwODc5NDggMjAyNy42MiAxNDMzLjQyKSIgZmlsbD0iIzBBMDAwMCIvPgo8cmVjdCB4PSIxMTE2IiB5PSI5ODYiIHdpZHRoPSI3MCIgaGVpZ2h0PSI2OTYiIGZpbGw9IiMwQTAwMDAiLz4KPHJlY3QgeD0iMTM4NCIgeT0iMTAwMiIgd2lkdGg9IjE0MSIgaGVpZ2h0PSI0MDIiIGZpbGw9IiNGRkZGRkYiLz4KPHBhdGggZD0iTTExNjcgMTM2OC44N0MxMTY3IDE1MDguOTkgMTA4Ni4yNyAxNjgyIDEwMzcuMzUgMTY4MkM5ODguNDI4IDE2ODIgOTEyIDE1MDguOTkgOTEyIDEzNjguODdDOTEyIDEyMjguNzUgOTg4LjQyOCAxMDQxIDEwMzcuMzUgMTA0MUMxMDg2LjI3IDEwNDEgMTE2NyAxMjI4Ljc1IDExNjcgMTM2OC44N1oiIGZpbGw9IiMwOTAwMDAiLz4KPHBhdGggZD0iTTExMTcgMTM2NC41M0MxMTE3IDE0NTAuNTMgMTA2OC44OCAxNTg1IDEwMzkuNzIgMTU4NUMxMDEwLjU2IDE1ODUgOTY1IDE0NTAuNTMgOTY1IDEzNjQuNTNDOTY1IDEyNzguNTQgMTAxMC41NiAxMTE4IDEwMzkuNzIgMTExOEMxMDY4Ljg4IDExMTggMTExNyAxMjc4LjU0IDExMTcgMTM2NC41M1oiIGZpbGw9IiNGRkZGRkYiLz4KPHJlY3QgeD0iOTMzIiB5PSIxMjU1IiB3aWR0aD0iMTkxIiBoZWlnaHQ9IjM1IiBmaWxsPSIjMDkwMDAwIi8+CjxyZWN0IHg9IjkyNCIgeT0iMTQ1MSIgd2lkdGg9IjIwMCIgaGVpZ2h0PSIzNiIgZmlsbD0iIzA5MDAwMCIvPgo8cGF0aCBkPSJNMTYwNy41IDEzMTRDMTYwNy41IDEzNDIuNDQgMTU3My43MSAxMzY2IDE1MjQgMTM2NkMxNDc0LjI5IDEzNjYgMTQzNCAxMzQyLjk0IDE0MzQgMTMxNC41QzE0MzQgMTI4Ni4wNiAxNDc0LjI5IDEyNjMgMTUyNCAxMjYzQzE1NzMuNzEgMTI2MyAxNjA3LjUgMTI4NS41NiAxNjA3LjUgMTMxNFoiIGZpbGw9IiMwOTAwMDAiLz4KPGVsbGlwc2UgY3g9IjE1MjQuNSIgY3k9IjEzMTMiIHJ4PSI2MC41IiByeT0iMzAiIGZpbGw9IiNGRkZGRkYiLz4KPHBhdGggZD0iTTE1ODUgMTE5M0MxNTg1IDExOTEuMzQgMTU4Ni4zNCAxMTkwIDE1ODggMTE5MEgxNjA3QzE2MDguNjYgMTE5MCAxNjEwIDExOTEuMzQgMTYxMCAxMTkzVjEzNjNDMTYxMCAxMzY0LjY2IDE2MDguNjYgMTM2NiAxNjA3IDEzNjZIMTU4OEMxNTg2LjM0IDEzNjYgMTU4NSAxMzY0LjY2IDE1ODUgMTM2M1YxMTkzWiIgZmlsbD0iIzA5MDAwMCIvPgo8Y2lyY2xlIGN4PSIxNjMwLjUiIGN5PSIxMzUyLjUiIHI9IjEyLjUiIGZpbGw9IiMwOTAwMDAiLz4KPHBhdGggZD0iTTIwMzQgMTMxOS41QzIwMzQgMTM0Ny45NCAxOTkzLjcxIDEzNzEgMTk0NCAxMzcxQzE4OTQuMjkgMTM3MSAxODU0IDEzNDcuOTQgMTg1NCAxMzE5LjVDMTg1NCAxMjkxLjA2IDE4OTQuMjkgMTI2OCAxOTQ0IDEyNjhDMTk5My43MSAxMjY4IDIwMzQgMTI5MS4wNiAyMDM0IDEzMTkuNVoiIGZpbGw9IiMwOTAwMDAiLz4KPGcgZmlsdGVyPSJ1cmwoI2ZpbHRlcjBfZF8xM18xNDIpIj4KPHBhdGggZD0iTTIwMDUgMTMxOEMyMDA1IDEzMzQuNTcgMTk3Ny45MSAxMzQ4IDE5NDQuNSAxMzQ4QzE5MTEuMDkgMTM0OCAxODg0IDEzMzQuNTcgMTg4NCAxMzE4QzE4ODQgMTMwMS40MyAxOTExLjA5IDEyODggMTk0NC41IDEyODhDMTk3Ny45MSAxMjg4IDIwMDUgMTMwMS40MyAyMDA1IDEzMThaIiBmaWxsPSIjRkZGRkZGIi8+CjwvZz4KPHBhdGggZD0iTTE4MTcuNSAxMzE5LjVDMTgxNy41IDEzNDcuOTQgMTc4My43MSAxMzcxIDE3MzQgMTM3MUMxNjg0LjI5IDEzNzEgMTY0NCAxMzQ3Ljk0IDE2NDQgMTMxOS41QzE2NDQgMTI5MS4wNiAxNjg0LjI5IDEyNjggMTczNCAxMjY4QzE3ODMuNzEgMTI2OCAxODE3LjUgMTI5MS4wNiAxODE3LjUgMTMxOS41WiIgZmlsbD0iIzA5MDAwMCIvPgo8ZWxsaXBzZSBjeD0iMTczNC41IiBjeT0iMTMxOCIgcng9IjYwLjUiIHJ5PSIzMCIgZmlsbD0iI0ZGRkZGRiIvPgo8cGF0aCBkPSJNMTc5NSAxMTkzQzE3OTUgMTE5MS4zNCAxNzk2LjM0IDExOTAgMTc5OCAxMTkwSDE4MThDMTgxOS42NiAxMTkwIDE4MjEgMTE5MS4zNCAxODIxIDExOTNWMTM2OEMxODIxIDEzNjkuNjYgMTgxOS42NiAxMzcxIDE4MTggMTM3MUgxNzk4QzE3OTYuMzQgMTM3MSAxNzk1IDEzNjkuNjYgMTc5NSAxMzY4VjExOTNaIiBmaWxsPSIjMDkwMDAwIi8+CjxjaXJjbGUgY3g9IjE4NDEiIGN5PSIxMzU4IiByPSIxMi41IiBmaWxsPSIjMDkwMDAwIiBzdHJva2U9ImJsYWNrIi8+CjxwYXRoIGQ9Ik0xOTk1IDEyNzIuNTRDMTk5NSAxMjcxLjY5IDE5OTcuMjggMTI3MSAyMDAwLjA5IDEyNzFIMjAyOC45MUMyMDMxLjcyIDEyNzEgMjAzNCAxMjcxLjY5IDIwMzQgMTI3Mi41NFYxMzcyLjQ1QzIwMzQgMTM3My4zMSAyMDMxLjcyIDEzNzQgMjAyOC45MSAxMzc0SDIwMDAuMDlDMTk5Ny4yOCAxMzc0IDE5OTUgMTM3My4zMSAxOTk1IDEzNzIuNDVDMTk5NSAxMzMzLjQ0IDE5OTUgMTMxMS41NiAxOTk1IDEyNzIuNTRaIiBmaWxsPSIjRkZGRkZGIi8+CjxjaXJjbGUgY3g9IjIwMTkiIGN5PSIxMzU4IiByPSIxMyIgZmlsbD0iIzA5MDAwMCIvPgo8cGF0aCBkPSJNMTg0OC42OCAxMjEwLjQ5QzE4NDguNjggMTIwOC4yMiAxODQ5LjIxIDEyMDYuMzkgMTg1MC4yNiAxMjA1LjAxQzE4NTEuMzIgMTIwMy42MyAxODUyLjc0IDEyMDIuOTMgMTg1NC41MSAxMjAyLjkzQzE4NTYuMDggMTIwMi45MyAxODU3LjM1IDEyMDMuNDggMTg1OC4zMiAxMjA0LjU3VjExOTdIMTg2MS42NFYxMjE4SDE4NTguNjNMMTg1OC40NyAxMjE2LjQ3QzE4NTcuNDcgMTIxNy42NyAxODU2LjE1IDEyMTguMjcgMTg1NC40OSAxMjE4LjI3QzE4NTIuNzYgMTIxOC4yNyAxODUxLjM1IDEyMTcuNTggMTg1MC4yOCAxMjE2LjE4QzE4NDkuMjEgMTIxNC43OSAxODQ4LjY4IDEyMTIuODkgMTg0OC42OCAxMjEwLjQ5Wk0xODUyIDEyMTAuNzhDMTg1MiAxMjEyLjI5IDE4NTIuMjkgMTIxMy40NiAxODUyLjg2IDEyMTQuMzFDMTg1My40NCAxMjE1LjE1IDE4NTQuMjcgMTIxNS41NyAxODU1LjMzIDEyMTUuNTdDMTg1Ni42OSAxMjE1LjU3IDE4NTcuNjkgMTIxNC45NiAxODU4LjMyIDEyMTMuNzVWMTIwNy40M0MxODU3LjcgMTIwNi4yNSAxODU2LjcyIDEyMDUuNjUgMTg1NS4zNiAxMjA1LjY1QzE4NTQuMjkgMTIwNS42NSAxODUzLjQ2IDEyMDYuMDggMTg1Mi44NyAxMjA2Ljk0QzE4NTIuMjkgMTIwNy43OSAxODUyIDEyMDkuMDcgMTg1MiAxMjEwLjc4Wk0xODcyLjc0IDEyMTguMjdDMTg3MC42MyAxMjE4LjI3IDE4NjguOTIgMTIxNy42MSAxODY3LjYxIDEyMTYuMjlDMTg2Ni4zMSAxMjE0Ljk2IDE4NjUuNjYgMTIxMy4xOSAxODY1LjY2IDEyMTAuOTlWMTIxMC41OEMxODY1LjY2IDEyMDkuMSAxODY1Ljk0IDEyMDcuNzggMTg2Ni41IDEyMDYuNjJDMTg2Ny4wOCAxMjA1LjQ2IDE4NjcuODggMTIwNC41NSAxODY4LjkxIDEyMDMuOUMxODY5Ljk0IDEyMDMuMjYgMTg3MS4wOSAxMjAyLjkzIDE4NzIuMzYgMTIwMi45M0MxODc0LjM3IDEyMDIuOTMgMTg3NS45MiAxMjAzLjU4IDE4NzcuMDIgMTIwNC44NkMxODc4LjEyIDEyMDYuMTUgMTg3OC42NyAxMjA3Ljk2IDE4NzguNjcgMTIxMC4zMlYxMjExLjY2SDE4NjkuMDFDMTg2OS4xMSAxMjEyLjg4IDE4NjkuNTEgMTIxMy44NCAxODcwLjIyIDEyMTQuNTVDMTg3MC45NCAxMjE1LjI3IDE4NzEuODQgMTIxNS42MiAxODcyLjkzIDEyMTUuNjJDMTg3NC40NSAxMjE1LjYyIDE4NzUuNjkgMTIxNS4wMSAxODc2LjY1IDEyMTMuNzhMMTg3OC40NCAxMjE1LjQ4QzE4NzcuODUgMTIxNi4zNyAxODc3LjA1IDEyMTcuMDYgMTg3Ni4wNiAxMjE3LjU1QzE4NzUuMDggMTIxOC4wMyAxODczLjk3IDEyMTguMjcgMTg3Mi43NCAxMjE4LjI3Wk0xODcyLjM0IDEyMDUuNkMxODcxLjQzIDEyMDUuNiAxODcwLjY5IDEyMDUuOTIgMTg3MC4xMyAxMjA2LjU2QzE4NjkuNTcgMTIwNy4xOSAxODY5LjIyIDEyMDguMDggMTg2OS4wNiAxMjA5LjIySDE4NzUuMzlWMTIwOC45OEMxODc1LjMyIDEyMDcuODYgMTg3NS4wMiAxMjA3LjAzIDE4NzQuNSAxMjA2LjQ2QzE4NzMuOTggMTIwNS44OSAxODczLjI2IDEyMDUuNiAxODcyLjM0IDEyMDUuNlpNMTg4Ny40MSAxMjEzLjc5TDE4OTAuNTQgMTIwMy4yMUgxODkzLjk3TDE4ODguODQgMTIxOEgxODg1Ljk2TDE4ODAuNzkgMTIwMy4yMUgxODg0LjIzTDE4ODcuNDEgMTIxMy43OVpNMTg5Ni4zNiAxMjEwLjQ5QzE4OTYuMzYgMTIwOC4yMiAxODk2Ljg5IDEyMDYuMzkgMTg5Ny45NSAxMjA1LjAxQzE4OTkgMTIwMy42MyAxOTAwLjQyIDEyMDIuOTMgMTkwMi4yIDEyMDIuOTNDMTkwMy43NyAxMjAyLjkzIDE5MDUuMDMgMTIwMy40OCAxOTA2IDEyMDQuNTdWMTE5N0gxOTA5LjMyVjEyMThIMTkwNi4zMUwxOTA2LjE1IDEyMTYuNDdDMTkwNS4xNiAxMjE3LjY3IDE5MDMuODMgMTIxOC4yNyAxOTAyLjE3IDEyMTguMjdDMTkwMC40NCAxMjE4LjI3IDE4OTkuMDQgMTIxNy41OCAxODk3Ljk2IDEyMTYuMThDMTg5Ni44OSAxMjE0Ljc5IDE4OTYuMzYgMTIxMi44OSAxODk2LjM2IDEyMTAuNDlaTTE4OTkuNjggMTIxMC43OEMxODk5LjY4IDEyMTIuMjkgMTg5OS45NyAxMjEzLjQ2IDE5MDAuNTQgMTIxNC4zMUMxOTAxLjEzIDEyMTUuMTUgMTkwMS45NSAxMjE1LjU3IDE5MDMuMDIgMTIxNS41N0MxOTA0LjM4IDEyMTUuNTcgMTkwNS4zNyAxMjE0Ljk2IDE5MDYgMTIxMy43NVYxMjA3LjQzQzE5MDUuMzkgMTIwNi4yNSAxOTA0LjQgMTIwNS42NSAxOTAzLjA1IDEyMDUuNjVDMTkwMS45NyAxMjA1LjY1IDE5MDEuMTQgMTIwNi4wOCAxOTAwLjU2IDEyMDYuOTRDMTg5OS45NyAxMjA3Ljc5IDE4OTkuNjggMTIwOS4wNyAxODk5LjY4IDEyMTAuNzhaTTE5MjEuNjUgMTIwNi4yNEMxOTIxLjIyIDEyMDYuMTcgMTkyMC43NiAxMjA2LjEzIDE5MjAuMyAxMjA2LjEzQzE5MTguNzggMTIwNi4xMyAxOTE3Ljc1IDEyMDYuNzIgMTkxNy4yMiAxMjA3Ljg4VjEyMThIMTkxMy45VjEyMDMuMjFIMTkxNy4wN0wxOTE3LjE1IDEyMDQuODZDMTkxNy45NiAxMjAzLjU4IDE5MTkuMDcgMTIwMi45MyAxOTIwLjQ5IDEyMDIuOTNDMTkyMC45NiAxMjAyLjkzIDE5MjEuMzYgMTIwMyAxOTIxLjY3IDEyMDMuMTJMMTkyMS42NSAxMjA2LjI0Wk0xOTIzLjc2IDEyMTAuNDdDMTkyMy43NiAxMjA5LjAyIDE5MjQuMDQgMTIwNy43MSAxOTI0LjYyIDEyMDYuNTZDMTkyNS4xOSAxMjA1LjM5IDE5MjYgMTIwNC41IDE5MjcuMDQgMTIwMy44OEMxOTI4LjA4IDEyMDMuMjUgMTkyOS4yNyAxMjAyLjkzIDE5MzAuNjIgMTIwMi45M0MxOTMyLjYyIDEyMDIuOTMgMTkzNC4yMyAxMjAzLjU4IDE5MzUuNDcgMTIwNC44NkMxOTM2LjcyIDEyMDYuMTUgMTkzNy40IDEyMDcuODUgMTkzNy41IDEyMDkuOTdMMTkzNy41MSAxMjEwLjc1QzE5MzcuNTEgMTIxMi4yMSAxOTM3LjIzIDEyMTMuNTIgMTkzNi42NiAxMjE0LjY2QzE5MzYuMTEgMTIxNS44MSAxOTM1LjMxIDEyMTYuNyAxOTM0LjI2IDEyMTcuMzNDMTkzMy4yMiAxMjE3Ljk2IDE5MzIuMDEgMTIxOC4yNyAxOTMwLjY1IDEyMTguMjdDMTkyOC41NiAxMjE4LjI3IDE5MjYuODkgMTIxNy41OCAxOTI1LjYzIDEyMTYuMkMxOTI0LjM4IDEyMTQuOCAxOTIzLjc2IDEyMTIuOTUgMTkyMy43NiAxMjEwLjYzVjEyMTAuNDdaTTE5MjcuMDggMTIxMC43NUMxOTI3LjA4IDEyMTIuMjggMTkyNy4zOSAxMjEzLjQ3IDE5MjguMDIgMTIxNC4zNEMxOTI4LjY1IDEyMTUuMTkgMTkyOS41MyAxMjE1LjYyIDE5MzAuNjUgMTIxNS42MkMxOTMxLjc3IDEyMTUuNjIgMTkzMi42NCAxMjE1LjE4IDE5MzMuMjYgMTIxNC4zMUMxOTMzLjg5IDEyMTMuNDMgMTkzNC4yIDEyMTIuMTUgMTkzNC4yIDEyMTAuNDdDMTkzNC4yIDEyMDguOTcgMTkzMy44OCAxMjA3Ljc5IDE5MzMuMjMgMTIwNi45MUMxOTMyLjU5IDEyMDYuMDQgMTkzMS43MiAxMjA1LjYgMTkzMC42MiAxMjA1LjZDMTkyOS41NCAxMjA1LjYgMTkyOC42NyAxMjA2LjAzIDE5MjguMDQgMTIwNi45QzE5MjcuNCAxMjA3Ljc2IDE5MjcuMDggMTIwOS4wNCAxOTI3LjA4IDEyMTAuNzVaTTE5NDQuOTcgMTIxOEgxOTQxLjY1VjEyMDMuMjFIMTk0NC45N1YxMjE4Wk0xOTQxLjQ1IDExOTkuMzdDMTk0MS40NSAxMTk4Ljg1IDE5NDEuNjEgMTE5OC40MyAxOTQxLjkzIDExOTguMDlDMTk0Mi4yNSAxMTk3Ljc2IDE5NDIuNzIgMTE5Ny41OSAxOTQzLjMyIDExOTcuNTlDMTk0My45MiAxMTk3LjU5IDE5NDQuMzkgMTE5Ny43NiAxOTQ0LjcxIDExOTguMDlDMTk0NS4wNCAxMTk4LjQzIDE5NDUuMjEgMTE5OC44NSAxOTQ1LjIxIDExOTkuMzdDMTk0NS4yMSAxMTk5Ljg3IDE5NDUuMDQgMTIwMC4yOSAxOTQ0LjcxIDEyMDAuNjJDMTk0NC4zOSAxMjAwLjk1IDE5NDMuOTIgMTIwMS4xMiAxOTQzLjMyIDEyMDEuMTJDMTk0Mi43MiAxMjAxLjEyIDE5NDIuMjUgMTIwMC45NSAxOTQxLjkzIDEyMDAuNjJDMTk0MS42MSAxMjAwLjI5IDE5NDEuNDUgMTE5OS44NyAxOTQxLjQ1IDExOTkuMzdaTTE5NDkuMSAxMjEwLjQ5QzE5NDkuMSAxMjA4LjIyIDE5NDkuNjMgMTIwNi4zOSAxOTUwLjY5IDEyMDUuMDFDMTk1MS43NSAxMjAzLjYzIDE5NTMuMTYgMTIwMi45MyAxOTU0Ljk0IDEyMDIuOTNDMTk1Ni41MSAxMjAyLjkzIDE5NTcuNzcgMTIwMy40OCAxOTU4Ljc0IDEyMDQuNTdWMTE5N0gxOTYyLjA2VjEyMThIMTk1OS4wNkwxOTU4Ljg5IDEyMTYuNDdDMTk1Ny45IDEyMTcuNjcgMTk1Ni41NyAxMjE4LjI3IDE5NTQuOTEgMTIxOC4yN0MxOTUzLjE4IDEyMTguMjcgMTk1MS43OCAxMjE3LjU4IDE5NTAuNyAxMjE2LjE4QzE5NDkuNjQgMTIxNC43OSAxOTQ5LjEgMTIxMi44OSAxOTQ5LjEgMTIxMC40OVpNMTk1Mi40MiAxMjEwLjc4QzE5NTIuNDIgMTIxMi4yOSAxOTUyLjcxIDEyMTMuNDYgMTk1My4yOSAxMjE0LjMxQzE5NTMuODcgMTIxNS4xNSAxOTU0LjY5IDEyMTUuNTcgMTk1NS43NiAxMjE1LjU3QzE5NTcuMTIgMTIxNS41NyAxOTU4LjExIDEyMTQuOTYgMTk1OC43NCAxMjEzLjc1VjEyMDcuNDNDMTk1OC4xMyAxMjA2LjI1IDE5NTcuMTUgMTIwNS42NSAxOTU1Ljc5IDEyMDUuNjVDMTk1NC43MSAxMjA1LjY1IDE5NTMuODggMTIwNi4wOCAxOTUzLjMgMTIwNi45NEMxOTUyLjcyIDEyMDcuNzkgMTk1Mi40MiAxMjA5LjA3IDE5NTIuNDIgMTIxMC43OFpNMTk2OC43MiAxMjE0LjVDMTk2OS4zNCAxMjE0LjUgMTk2OS44MiAxMjE0LjY4IDE5NzAuMTYgMTIxNS4wM0MxOTcwLjQ5IDEyMTUuMzggMTk3MC42NiAxMjE1LjgyIDE5NzAuNjYgMTIxNi4zNUMxOTcwLjY2IDEyMTYuODcgMTk3MC40OSAxMjE3LjMgMTk3MC4xNiAxMjE3LjY0QzE5NjkuODIgMTIxNy45OCAxOTY5LjM0IDEyMTguMTUgMTk2OC43MiAxMjE4LjE1QzE5NjguMTMgMTIxOC4xNSAxOTY3LjY2IDEyMTcuOTggMTk2Ny4zMSAxMjE3LjY0QzE5NjYuOTcgMTIxNy4zMSAxOTY2Ljc5IDEyMTYuODcgMTk2Ni43OSAxMjE2LjM1QzE5NjYuNzkgMTIxNS44MiAxOTY2Ljk2IDEyMTUuMzggMTk2Ny4zIDEyMTUuMDNDMTk2Ny42NCAxMjE0LjY4IDE5NjguMTEgMTIxNC41IDE5NjguNzIgMTIxNC41Wk0xOTgxLjY3IDEyMTUuNjJDMTk4Mi41IDEyMTUuNjIgMTk4My4xOCAxMjE1LjM4IDE5ODMuNzMgMTIxNC45QzE5ODQuMjggMTIxNC40MSAxOTg0LjU3IDEyMTMuODIgMTk4NC42MSAxMjEzLjExSDE5ODcuNzRDMTk4Ny43IDEyMTQuMDMgMTk4Ny40MSAxMjE0Ljg5IDE5ODYuODggMTIxNS42OUMxOTg2LjM0IDEyMTYuNDggMTk4NS42MSAxMjE3LjExIDE5ODQuNjkgMTIxNy41OEMxOTgzLjc3IDEyMTguMDQgMTk4Mi43NyAxMjE4LjI3IDE5ODEuNzEgMTIxOC4yN0MxOTc5LjY0IDEyMTguMjcgMTk3OCAxMjE3LjYgMTk3Ni43OSAxMjE2LjI2QzE5NzUuNTcgMTIxNC45MiAxOTc0Ljk3IDEyMTMuMDcgMTk3NC45NyAxMjEwLjcxVjEyMTAuMzdDMTk3NC45NyAxMjA4LjEyIDE5NzUuNTcgMTIwNi4zMiAxOTc2Ljc3IDEyMDQuOTdDMTk3Ny45OCAxMjAzLjYxIDE5NzkuNjIgMTIwMi45MyAxOTgxLjY5IDEyMDIuOTNDMTk4My40NSAxMjAyLjkzIDE5ODQuODggMTIwMy40NSAxOTg1Ljk5IDEyMDQuNDhDMTk4Ny4xIDEyMDUuNSAxOTg3LjY4IDEyMDYuODQgMTk4Ny43NCAxMjA4LjUxSDE5ODQuNjFDMTk4NC41NyAxMjA3LjY2IDE5ODQuMjggMTIwNi45NyAxOTgzLjczIDEyMDYuNDJDMTk4My4xOSAxMjA1Ljg3IDE5ODIuNTEgMTIwNS42IDE5ODEuNjcgMTIwNS42QzE5ODAuNTkgMTIwNS42IDE5NzkuNzYgMTIwNS45OSAxOTc5LjE4IDEyMDYuNzhDMTk3OC42IDEyMDcuNTUgMTk3OC4zIDEyMDguNzMgMTk3OC4yOSAxMjEwLjMyVjEyMTAuODVDMTk3OC4yOSAxMjEyLjQ1IDE5NzguNTggMTIxMy42NSAxOTc5LjE1IDEyMTQuNDVDMTk3OS43MyAxMjE1LjIzIDE5ODAuNTcgMTIxNS42MiAxOTgxLjY3IDEyMTUuNjJaTTE5OTQuOSAxMjE4SDE5OTEuNThWMTE5N0gxOTk0LjlWMTIxOFpNMjAwOC42MSAxMjE2LjU1QzIwMDcuNjQgMTIxNy43IDIwMDYuMjUgMTIxOC4yNyAyMDA0LjQ2IDEyMTguMjdDMjAwMi44NSAxMjE4LjI3IDIwMDEuNjMgMTIxNy44IDIwMDAuODEgMTIxNi44N0MxOTk5Ljk4IDEyMTUuOTMgMTk5OS41NyAxMjE0LjU3IDE5OTkuNTcgMTIxMi43OVYxMjAzLjIxSDIwMDIuOVYxMjEyLjc1QzIwMDIuOSAxMjE0LjYzIDIwMDMuNjggMTIxNS41NyAyMDA1LjIzIDEyMTUuNTdDMjAwNi44NSAxMjE1LjU3IDIwMDcuOTQgMTIxNC45OSAyMDA4LjUgMTIxMy44M1YxMjAzLjIxSDIwMTEuODJWMTIxOEgyMDA4LjY5TDIwMDguNjEgMTIxNi41NVpNMjAyOS4zMSAxMjEwLjc1QzIwMjkuMzEgMTIxMy4wNSAyMDI4Ljc5IDEyMTQuODggMjAyNy43NiAxMjE2LjI0QzIwMjYuNzQgMTIxNy41OSAyMDI1LjM0IDEyMTguMjcgMjAyMy41NCAxMjE4LjI3QzIwMjEuODEgMTIxOC4yNyAyMDIwLjQ2IDEyMTcuNjUgMjAxOS40OSAxMjE2LjRMMjAxOS4zMyAxMjE4SDIwMTYuMzJWMTE5N0gyMDE5LjY0VjEyMDQuNjNDMjAyMC42IDEyMDMuNSAyMDIxLjg5IDEyMDIuOTMgMjAyMy41MSAxMjAyLjkzQzIwMjUuMzIgMTIwMi45MyAyMDI2LjczIDEyMDMuNiAyMDI3Ljc2IDEyMDQuOTRDMjAyOC43OSAxMjA2LjI4IDIwMjkuMzEgMTIwOC4xNiAyMDI5LjMxIDEyMTAuNTZWMTIxMC43NVpNMjAyNS45OSAxMjEwLjQ3QzIwMjUuOTkgMTIwOC44NiAyMDI1LjcxIDEyMDcuNjYgMjAyNS4xNCAxMjA2Ljg2QzIwMjQuNTcgMTIwNi4wNiAyMDIzLjc1IDEyMDUuNjUgMjAyMi42OCAxMjA1LjY1QzIwMjEuMjQgMTIwNS42NSAyMDIwLjIzIDEyMDYuMjggMjAxOS42NCAxMjA3LjU0VjEyMTMuNjRDMjAyMC4yNCAxMjE0LjkyIDIwMjEuMjYgMTIxNS41NyAyMDIyLjcxIDEyMTUuNTdDMjAyMy43NSAxMjE1LjU3IDIwMjQuNTUgMTIxNS4xOCAyMDI1LjExIDEyMTQuNEMyMDI1LjY4IDEyMTMuNjMgMjAyNS45NyAxMjEyLjQ2IDIwMjUuOTkgMTIxMC44OVYxMjEwLjQ3WiIgZmlsbD0iYmxhY2siLz4KPHJlY3QgeD0iMTI0OSIgeT0iMTAxOCIgd2lkdGg9IjY3IiBoZWlnaHQ9IjY4IiBmaWxsPSIjRkZGRkZGIi8+CjxkZWZzPgo8ZmlsdGVyIGlkPSJmaWx0ZXIwX2RfMTNfMTQyIiB4PSIxODgwIiB5PSIxMjg4IiB3aWR0aD0iMTI5IiBoZWlnaHQ9IjY4IiBmaWx0ZXJVbml0cz0idXNlclNwYWNlT25Vc2UiIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0ic1JHQiI+CjxmZUZsb29kIGZsb29kLW9wYWNpdHk9IjAiIHJlc3VsdD0iQmFja2dyb3VuZEltYWdlRml4Ii8+CjxmZUNvbG9yTWF0cml4IGluPSJTb3VyY2VBbHBoYSIgdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDEyNyAwIiByZXN1bHQ9ImhhcmRBbHBoYSIvPgo8ZmVPZmZzZXQgZHk9IjQiLz4KPGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMiIvPgo8ZmVDb21wb3NpdGUgaW4yPSJoYXJkQWxwaGEiIG9wZXJhdG9yPSJvdXQiLz4KPGZlQ29sb3JNYXRyaXggdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAuMjUgMCIvPgo8ZmVCbGVuZCBtb2RlPSJub3JtYWwiIGluMj0iQmFja2dyb3VuZEltYWdlRml4IiByZXN1bHQ9ImVmZmVjdDFfZHJvcFNoYWRvd18xM18xNDIiLz4KPGZlQmxlbmQgbW9kZT0ibm9ybWFsIiBpbj0iU291cmNlR3JhcGhpYyIgaW4yPSJlZmZlY3QxX2Ryb3BTaGFkb3dfMTNfMTQyIiByZXN1bHQ9InNoYXBlIi8+CjwvZmlsdGVyPgo8L2RlZnM+Cjwvc3ZnPgo=" alt="d.d.c.">
+        <span>devdroid.club</span>
+      </a>
+      <div class="section__title-wrap">
+        <div class="section__crumb">~/devdroid/product</div>
+        <h2 class="section__title" data-i18n="title.product">product</h2>
+      </div>
+    </div>
+    <div class="service">
+      <p class="service__subtitle" data-i18n="product.subtitle">product development &amp; guidance</p>
+      <p class="service__problem" data-i18n="product.problem">Most projects fail not in code, but in deciding what to build. Features nobody needs, sites that don't convert, automation of the wrong process.</p>
+      <div class="service__block">
+        <h3 class="service__label" data-i18n="service.whatwedo">What we do</h3>
+        <ul class="service__list">
+          <li><span class="sl">/</span><span data-i18n="list.product.do.1">Turn business goals into measurable product goals</span></li>
+          <li><span class="sl">/</span><span data-i18n="list.product.do.2">Map users, scenarios and hypotheses</span></li>
+          <li><span class="sl">/</span><span data-i18n="list.product.do.3">Cut scope to what's worth building first</span></li>
+          <li><span class="sl">/</span><span data-i18n="list.product.do.4">Write specs your team (or ours) can actually build from</span></li>
+          <li><span class="sl">/</span><span data-i18n="list.product.do.5">Set up metrics and review loops after launch</span></li>
+        </ul>
+      </div>
+      <div class="service__block">
+        <h3 class="service__label" data-i18n="service.youget">You get</h3>
+        <ul class="service__list">
+          <li><span class="sl">/</span><span data-i18n="list.product.get.1">A clear roadmap, specs, and a partner who owns the outcome</span></li>
+          <li><span class="sl">/</span><span data-i18n="list.product.get.2">Design, development and growth follow as next steps</span></li>
+        </ul>
+      </div>
+      <a class="service__cta" href="mailto:stas.stasiv@gmail.com" data-i18n="product.cta">&rarr; start with a free task review</a>
+    </div>
+  </section>
+
   <!-- WEBSITES -->
   <section class="slide" id="slide-websites">
     <div class="section__head">
@@ -1095,6 +1263,7 @@ html, body {
     </div>
     <div class="service">
       <p class="service__problem" data-i18n="websites.problem">Most business sites are built from a template, then bent to fit the business afterward. The result looks generic and the structure fights the actual sales and support process.</p>
+      <a class="service__bridge" href="#/product" data-goto="product" data-i18n="service.bridge">&rarr; Every build starts with a product session — goal and success metric agreed before development begins.</a>
       <div class="service__block">
         <h3 class="service__label" data-i18n="service.whatwedo">What we do</h3>
         <ul class="service__list">
@@ -1131,6 +1300,7 @@ html, body {
     </div>
     <div class="service">
       <p class="service__problem" data-i18n="bots.problem">Repetitive front-line work — answering the same questions, logging requests, notifying the right person — still runs through someone checking a chat or inbox by hand.</p>
+      <a class="service__bridge" href="#/product" data-goto="product" data-i18n="service.bridge">&rarr; Every build starts with a product session — goal and success metric agreed before development begins.</a>
       <div class="service__block">
         <h3 class="service__label" data-i18n="service.whatwedo">What we do</h3>
         <ul class="service__list">
@@ -1164,6 +1334,7 @@ html, body {
     </div>
     <div class="service">
       <p class="service__problem" data-i18n="ai.problem">A specific process in your business is manual and repetitive — support replies, lead qualification, document review, data lookup — and doesn't need a person doing it every single time.</p>
+      <a class="service__bridge" href="#/product" data-goto="product" data-i18n="service.bridge">&rarr; Every build starts with a product session — goal and success metric agreed before development begins.</a>
       <div class="service__block">
         <h3 class="service__label" data-i18n="service.whatwedo">What we do</h3>
         <ul class="service__list">
@@ -1198,6 +1369,7 @@ html, body {
     </div>
     <div class="service">
       <p class="service__problem" data-i18n="mvp.problem">You have an idea and need to know if it works for real users before committing to a full build.</p>
+      <a class="service__bridge" href="#/product" data-goto="product" data-i18n="service.bridge">&rarr; Every build starts with a product session — goal and success metric agreed before development begins.</a>
       <div class="service__block">
         <h3 class="service__label" data-i18n="service.whatwedo">What we do</h3>
         <ul class="service__list">
@@ -1358,6 +1530,7 @@ html, body {
     </div>
     <div class="portfolio-grid">
       <article class="portfolio-card">
+        <a class="portfolio-card__tag" href="#/websites" data-goto="websites" data-i18n="menu.websites">/websites</a>
         <h3 class="portfolio-card__title" data-i18n="portfolio.case1.title">Ice Arena Solntsevo &mdash; arena-solntsevo.ru</h3>
         <p class="portfolio-card__what" data-i18n="portfolio.case1.what">Sports complex website (B2C)</p>
         <p class="portfolio-card__role" data-i18n="portfolio.case1.role">Full cycle &mdash; from business goals to launch. The client provided goals, a service list, some content and a brand book; everything else is ours.</p>
@@ -1375,6 +1548,7 @@ html, body {
         </div>
       </article>
       <article class="portfolio-card">
+        <a class="portfolio-card__tag" href="#/websites" data-goto="websites" data-i18n="menu.websites">/websites</a>
         <h3 class="portfolio-card__title" data-i18n="portfolio.case2.title">Pacific Logistics (TLC) &mdash; pacificlog.ru</h3>
         <p class="portfolio-card__what" data-i18n="portfolio.case2.what">Corporate website for a logistics company (B2B)</p>
         <p class="portfolio-card__role" data-i18n="portfolio.case2.role">Full cycle &mdash; from business goals to launch, within the client's brand book.</p>
@@ -1458,11 +1632,12 @@ html, body {
 (function () {
   'use strict';
 
-  var SECTIONS = ['home', 'services', 'websites', 'bots', 'ai', 'mvp', 'support', 'audit', 'process', 'portfolio', 'blog'];
+  var SECTIONS = ['home', 'services', 'product', 'websites', 'bots', 'ai', 'mvp', 'support', 'audit', 'process', 'portfolio', 'blog'];
 
   var I18N = {
     en: {
       'menu.services': '/services',
+      'menu.product': '/product',
       'menu.websites': '/websites',
       'menu.bots': '/bots',
       'menu.ai': '/ai',
@@ -1473,6 +1648,7 @@ html, body {
       'menu.portfolio': '/portfolio',
       'menu.blog': '/blog',
       'title.services': 'services',
+      'title.product': 'product',
       'title.websites': 'websites',
       'title.bots': 'bots',
       'title.ai': 'ai',
@@ -1488,11 +1664,27 @@ html, body {
       'title.testing': 'testing',
       'title.publishing': 'publishing',
       'title.promoting': 'promoting',
-      'home.pitch': 'An AI-augmented studio: senior engineers working alongside AI agents in development, code review, and testing. Agency-grade process. Small-team speed.',
+      'home.pitch': 'We’re a product-minded studio. You bring a goal — more leads, less manual work, an idea to validate. We help you decide what’s worth building, build it AI-accelerated, and keep improving it after launch with real data.',
       'home.cta': '→ start a project',
+      'home.tbg.think': 'THINK',
+      'home.tbg.build': 'BUILD',
+      'home.tbg.grow': 'GROW',
+      'home.tbg.iteration': 'data-driven iteration',
       'service.whatwedo': 'What we do',
       'service.youget': 'You get',
+      'service.bridge': '→ Every build starts with a product session — goal and success metric agreed before development begins.',
       'services.viewlabel': 'View →',
+      'services.card.product': 'Turning a business goal into a scoped, spec’d plan — before any design or development starts.',
+      'product.subtitle': 'product development & guidance',
+      'product.problem': 'Most projects fail not in code, but in deciding what to build. Features nobody needs, sites that don’t convert, automation of the wrong process.',
+      'list.product.do.1': 'Turn business goals into measurable product goals',
+      'list.product.do.2': 'Map users, scenarios and hypotheses',
+      'list.product.do.3': 'Cut scope to what’s worth building first',
+      'list.product.do.4': 'Write specs your team (or ours) can actually build from',
+      'list.product.do.5': 'Set up metrics and review loops after launch',
+      'list.product.get.1': 'A clear roadmap, specs, and a partner who owns the outcome',
+      'list.product.get.2': 'Design, development and growth follow as next steps',
+      'product.cta': '→ start with a free task review',
       'services.card.websites': 'Full-cycle sites — from business goals and brand book to a deployed, SEO-ready build.',
       'services.card.bots': 'Telegram bots and n8n automations connected to your CRM, Jira, or spreadsheets.',
       'services.card.ai': 'Chatbots on your own data, internal AI agents, and automation for repetitive processes.',
@@ -1584,6 +1776,7 @@ html, body {
     },
     ru: {
       'menu.services': '/услуги',
+      'menu.product': '/продукт',
       'menu.websites': '/сайты',
       'menu.bots': '/боты',
       'menu.ai': '/ai',
@@ -1594,6 +1787,7 @@ html, body {
       'menu.portfolio': '/портфолио',
       'menu.blog': '/блог',
       'title.services': 'услуги',
+      'title.product': 'продукт',
       'title.websites': 'сайты',
       'title.bots': 'боты',
       'title.ai': 'ai',
@@ -1609,11 +1803,27 @@ html, body {
       'title.testing': 'тестирование',
       'title.publishing': 'публикация',
       'title.promoting': 'продвижение',
-      'home.pitch': 'Студия с AI в контуре разработки: senior-инженеры работают вместе с AI-агентами — в разработке, код-ревью и тестировании. Процесс и качество — как в агентстве. Скорость — как у небольшой команды.',
+      'home.pitch': 'Мы — студия с продуктовым подходом. Вы приходите с целью: больше заявок, меньше ручной работы, идея, которую надо проверить. Мы помогаем решить, что действительно стоит строить, строим с AI-ускорением — и развиваем продукт по данным после запуска.',
       'home.cta': '→ начать проект',
+      'home.tbg.think': 'ДУМАЕМ',
+      'home.tbg.build': 'СТРОИМ',
+      'home.tbg.grow': 'РАЗВИВАЕМ',
+      'home.tbg.iteration': 'итерации по данным',
       'service.whatwedo': 'Что делаем',
       'service.youget': 'Что получаете',
+      'service.bridge': '→ Каждая сборка начинается с продуктовой сессии — цель и метрика успеха согласуются до старта разработки.',
       'services.viewlabel': 'Подробнее →',
+      'services.card.product': 'Превращаем бизнес-цель в план со скоупом и постановками — до старта дизайна и разработки.',
+      'product.subtitle': 'развитие продукта и продуктовая экспертиза',
+      'product.problem': 'Большинство проектов проваливаются не в коде, а в выборе, что строить. Фичи, которые не нужны; сайты, которые не конвертят; автоматизация не того процесса.',
+      'list.product.do.1': 'Превращаем бизнес-цели в измеримые продуктовые',
+      'list.product.do.2': 'Разбираем пользователей, сценарии и гипотезы',
+      'list.product.do.3': 'Режем скоуп до того, что стоит строить первым',
+      'list.product.do.4': 'Пишем постановки, по которым реально можно строить',
+      'list.product.do.5': 'Настраиваем метрики и цикл улучшений после запуска',
+      'list.product.get.1': 'Роадмап, постановки и партнёр, отвечающий за результат',
+      'list.product.get.2': 'Дизайн, разработка и развитие — как следующие шаги',
+      'product.cta': '→ начните с бесплатного разбора задачи',
       'services.card.websites': 'Сайты под ключ — от бизнес-целей и брендбука до задеплоенного SEO-готового результата.',
       'services.card.bots': 'Telegram-боты и автоматизации на n8n, подключённые к вашей CRM, Jira или таблицам.',
       'services.card.ai': 'Чат-боты на ваших данных, внутренние AI-агенты и автоматизация рутинных процессов.',

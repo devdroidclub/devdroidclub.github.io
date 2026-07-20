@@ -9,8 +9,9 @@ single-file build in `index.html` is the implementation source of truth.
 - Macrostructure: Framed Product Narrative.
 - Position: digital product studio; one responsible product
   partner assembling trusted specialists around the actual challenge.
-- Navigation: sticky utility rail with anchor navigation and a full-screen
-  terminal-style mobile menu.
+- Navigation: sticky three-zone utility rail (brand, primary links, contacts /
+  language / CTA) and a full-screen mobile menu with its own wordmark, two-column
+  link grid on tablet, single-column links on phones and direct contact actions.
 - Theme: achromatic warm paper, near-black ink, strict rules, no gradients,
   shadows, glass effects, or decorative rounding.
 - Frame: one sharp outer frame around the full document. It must not consume

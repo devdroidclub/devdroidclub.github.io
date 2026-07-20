@@ -38,13 +38,16 @@ font values do not appear ad hoc outside the token block.
 ## Typography
 
 - Display and body: Helvetica Neue / Arial / system sans-serif.
-- Brand accent: Shippori Mincho 600–700 is reserved for the `d.d.c.` wordmark
-  in the header and footer. It is not used as a general display face.
+- Brand accent: the canonical `assets/ddc-wordmark.svg` contains the Mincho
+  `d.d.c.` wordmark. Use this asset in the header and footer; do not recreate
+  the mark as live page text or pair it with a second DDC title in the footer.
 - Display and body remain Helvetica Neue / Arial in both languages so the
   hierarchy is consistent and Cyrillic never falls into an uncontrolled face.
 - Technical metadata, navigation, section numbers, states and buttons: Hack.
 - Body copy is at least 16px on mobile, with a 55–75-character reading measure.
 - Major headings are tightly tracked, upright, left-aligned and allowed to wrap.
+- Major headings wrap only at spaces; never split a word to satisfy a narrow
+  editorial column. Reduce the responsive display size before breaking words.
 - Hero and contact display scales are capped for 13-inch laptop viewports and
   have an additional short-viewport rule so each opening composition fits.
 - Mono is never used for long paragraphs.
@@ -58,6 +61,8 @@ font values do not appear ad hoc outside the token block.
   a heading at narrow widths.
 - Selected work remains legible without imagery. Future approved screenshots
   are optional progressive enhancement, never required structure.
+- Footer capability labels are navigation, not decoration: keep them as links
+  to the capabilities section with visible hover and keyboard focus states.
 
 ## Motion
 

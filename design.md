@@ -7,7 +7,7 @@ single-file build in `index.html` is the implementation source of truth.
 
 - Genre: modern-minimal with a terminal/editorial engineering voice.
 - Macrostructure: Framed Product Narrative.
-- Position: independent digital product studio; one responsible product
+- Position: digital product studio; one responsible product
   partner assembling trusted specialists around the actual challenge.
 - Navigation: sticky utility rail with anchor navigation and a full-screen
   terminal-style mobile menu.
@@ -38,15 +38,15 @@ font values do not appear ad hoc outside the token block.
 ## Typography
 
 - Display and body: Helvetica Neue / Arial / system sans-serif.
-- Brand/display accent: Shippori Mincho 600–700 for the English hero and major
-  English statements. Cyrillic headings stay in the sans family because
-  Shippori Mincho has no native Cyrillic drawing; this avoids an uncontrolled
-  fallback face in the Russian version.
+- Brand accent: Shippori Mincho 600–700 is reserved for the `d.d.c.` wordmark
+  in the header and footer. It is not used as a general display face.
+- Display and body remain Helvetica Neue / Arial in both languages so the
+  hierarchy is consistent and Cyrillic never falls into an uncontrolled face.
 - Technical metadata, navigation, section numbers, states and buttons: Hack.
 - Body copy is at least 16px on mobile, with a 55–75-character reading measure.
 - Major headings are tightly tracked, upright, left-aligned and allowed to wrap.
-- Hero scale is capped for 13-inch laptop viewports and has an additional
-  short-viewport rule; Russian uses a smaller fluid maximum than English.
+- Hero and contact display scales are capped for 13-inch laptop viewports and
+  have an additional short-viewport rule so each opening composition fits.
 - Mono is never used for long paragraphs.
 
 ## Components
@@ -74,6 +74,8 @@ font values do not appear ad hoc outside the token block.
   details without owner confirmation.
 - Telegram bot stays generic until a verified public case is supplied.
 - Preserve the established email, Telegram and GitHub contacts.
+- Russian is the default language; an explicitly saved English preference is
+  respected on later visits.
 
 ## Accessibility and responsive
 

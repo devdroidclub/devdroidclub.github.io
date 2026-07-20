@@ -11,12 +11,12 @@ initial HTML and navigation uses GitHub Pages-safe hash anchors.
 
 ## Sections
 
-- [Home](https://devdroidclub.github.io/#/): product-studio positioning and primary action.
-- [Our model](https://devdroidclub.github.io/#/model): one product partner and a trusted flexible team.
-- [Capabilities](https://devdroidclub.github.io/#/services): product discovery, UX/UI, web products, mobile applications, bots/integrations and ongoing development.
-- [Selected work](https://devdroidclub.github.io/#/work): Arena, TLK and a generic Telegram bot case, without unverified metrics.
-- [Process](https://devdroidclub.github.io/#/process): discover, define, design, assemble, build, verify, launch and evolve.
-- [Contact](https://devdroidclub.github.io/#/contact): project brief form with an email-client fallback and copy action.
+- [Home](https://devdroidclub.site/#/): product-studio positioning and primary action.
+- [Our model](https://devdroidclub.site/#/model): one product partner and a trusted flexible team.
+- [Capabilities](https://devdroidclub.site/#/services): product discovery, UX/UI, web products, mobile applications, bots/integrations and ongoing development.
+- [Selected work](https://devdroidclub.site/#/work): Arena, TLK and a generic Telegram bot case, without unverified metrics.
+- [Process](https://devdroidclub.site/#/process): discover, define, design, assemble, build, verify, launch and evolve.
+- [Contact](https://devdroidclub.site/#/contact): project brief form with an email-client fallback and copy action.
 
 ## Notes
 

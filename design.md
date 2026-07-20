@@ -38,9 +38,15 @@ font values do not appear ad hoc outside the token block.
 ## Typography
 
 - Display and body: Helvetica Neue / Arial / system sans-serif.
+- Brand/display accent: Shippori Mincho 600–700 for the English hero and major
+  English statements. Cyrillic headings stay in the sans family because
+  Shippori Mincho has no native Cyrillic drawing; this avoids an uncontrolled
+  fallback face in the Russian version.
 - Technical metadata, navigation, section numbers, states and buttons: Hack.
 - Body copy is at least 16px on mobile, with a 55–75-character reading measure.
 - Major headings are tightly tracked, upright, left-aligned and allowed to wrap.
+- Hero scale is capped for 13-inch laptop viewports and has an additional
+  short-viewport rule; Russian uses a smaller fluid maximum than English.
 - Mono is never used for long paragraphs.
 
 ## Components

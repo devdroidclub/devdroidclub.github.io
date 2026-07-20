@@ -1,115 +1,86 @@
 # Design — devdroid.club
 
-Locked design system. Future Hallmark runs read this file first; pages defer
-to it. Amend intentionally — the file is the rule.
+Locked design system for the DDC commercial site. Amend intentionally; the
+single-file build in `index.html` is the implementation source of truth.
 
 ## System
-- Genre · modern-minimal with editorial display moments
-- Macrostructure family · Continuous Product Narrative (marketing + services), Catalogue (portfolio + blog index), Long Document (blog post)
-- Navigation · sticky/retracting site header + natural anchor scrolling; no presentation frame, slide controls, deck index, or floating dock
-- Theme · studied DNA (Nominal: calm grid, natural scroll, warm-neutral surfaces; d.d.c. content and identity remain original)
-- Axes · light warm paper / editorial serif display + neutral grotesk body / achromatic graphite accent
 
-## Tokens (canonical · implemented in `index.html`'s `:root` block)
+- Genre: modern-minimal with a terminal/editorial engineering voice.
+- Macrostructure: Framed Product Narrative.
+- Position: independent digital product studio; one responsible product
+  partner assembling trusted specialists around the actual challenge.
+- Navigation: sticky utility rail with anchor navigation and a full-screen
+  terminal-style mobile menu.
+- Theme: achromatic warm paper, near-black ink, strict rules, no gradients,
+  shadows, glass effects, or decorative rounding.
+- Frame: one sharp outer frame around the full document. It must not consume
+  useful mobile width.
+
+## Tokens
+
 ```css
 :root {
-  --color-paper:      oklch(94% 0.004 95);   /* base surface — barely-there neutral tint, not stark white */
-  --color-paper-2:    oklch(90% 0.005 95);   /* recessed panels / sidebar-like surfaces, one notch darker */
-  --color-ink:        oklch(18% 0.006 95);
-  --color-ink-2:      oklch(45% 0.01 95);    /* muted / secondary text */
-  --color-rule:       oklch(85% 0.006 95);   /* hairline borders */
-  --color-accent:     oklch(38% 0.006 95);   /* graphite — emphasis without chromatic competition */
-  --color-accent-ink: oklch(96% 0.004 95);   /* text/icon on graphite fill */
-  --color-focus:      oklch(30% 0.008 95);
+  --paper:  oklch(96% 0.004 95);
+  --paper-2: oklch(91% 0.006 95);
+  --ink:    oklch(16% 0.006 95);
+  --muted:  oklch(44% 0.008 95);
+  --rule:   oklch(72% 0.006 95);
+  --focus:  oklch(34% 0.01 95);
 
-  --font-display: "Inter Tight", "General Sans", system-ui, sans-serif; /* candidate — role: heavy grotesque, single-family with body */
-  --font-body:    "Inter", system-ui, sans-serif;                       /* candidate — role: neutral grotesque */
-  --font-mono:    "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace; /* candidate — role: technical/meta labels */
-
-  /* 4-pt spacing scale, named: --space-3xs … --space-4xl. Define in tokens.css. */
-  /* Type scale, 1.25 (major-third) ratio: --text-xs … --text-display.          */
-
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --dur-fast: 180ms;  --dur-base: 240ms;  --dur-slow: 320ms;
-
-  --radius-card:  8px;   /* content surfaces: cards, panels, small icon tiles */
-  --radius-dock: 12px;   /* persistent floating contact dock */
-  --radius-pill:  999px; /* interactive controls: buttons, tags, active-tab chips */
-  --radius-input: 6px;   /* form inputs, small controls */
-  --radius-frame: 0px;   /* structural chrome: page frame, dividers, large photo/content blocks — deliberately sharp */
+  --sans: "Helvetica Neue", Arial, system-ui, sans-serif;
+  --mono: "Hack", "DejaVu Sans Mono", ui-monospace, monospace;
 }
 ```
 
-## Variants — Blog
-Scoped divergence, not a system override. The base system stays
-grotesk-sans/single-family (see Axes above); this variant applies only to
-`/blog` — post titles, section marks, bylines, category tags. Everything
-else (spacing scale, radius tiers, motion stance, CTA voice) is inherited
-from the base system unchanged.
+Spacing follows a named 4/8-point scale. Components consume tokens; colour and
+font values do not appear ad hoc outside the token block.
 
-- Source · user's own `d.d.c.` wordmark (Figma), two weights of the same
-  type family, confirmed by inspector panel — not screenshot-estimated.
-- `--serif-blog-display`: **Shippori Mincho**, weight 800 (ExtraBold),
-  letter-spacing -5%. Role: major page headings, post titles, blog masthead
-  mark. Free, Google Fonts.
-- Blog labels use the system mono face. Each route stays within the
-  editorial-display + neutral-body + mono discipline.
-- Surface pairing observed alongside the type: a near-black card
-  (`oklch(~8% 0 0)`) with off-white ink (`#FEFDFD`, not pure white) for
-  masthead/stamp treatments; a light grey halftone/grain paper texture for
-  section backgrounds. Grain is a background-only treatment — never place
-  it under running body text (legibility/contrast).
-- Live since 2026-07-18. `/blog` ships as two route-compatible sections in
-  `index.html`: `slide-blog` (index — card grid) and
-  `slide-blog-post` (a single reusable template, content injected by JS
-  from a `BLOG_POSTS` data object keyed by slug — see `index.html`'s
-  script section). Cards use `--serif-blog-display` for titles and
-  the system mono face for tag/date meta and the "Read →" link; body copy
-  uses the neutral grotesk `--font-blog-body` (currently Inter). Running
-  text is capped at roughly 680px, 17–19px with generous leading; mono is
-  reserved for paths, controls, and technical metadata. The article uses
-  the Long Document macrostructure and opens as a dedicated reading view.
-- Reading mode, revised 2026-07-19: every post exposes native sharing with
-  copy-link and Telegram fallbacks. Grain remains outside running text.
-- Autopublish path: a future publishing agent only needs to append an
-  entry to `BLOG_POSTS` (slug → `{ sourceUrl, en: {...}, ru: {...} }`) —
-  no HTML/CSS edits required per post. Keep claims sourced (a
-  `sourceLabel` + `sourceUrl` pair renders as a "Source:" line on the
-  post) — this is the site's honest-copy discipline applied to editorial
-  content, not just marketing copy.
+## Typography
 
-## CTA voice
-- Primary · solid graphite `--color-accent` fill, `--radius-pill`, generous horizontal padding
-- Secondary · outline/ghost on `--color-ink`, same `--radius-pill`
+- Display and body: Helvetica Neue / Arial / system sans-serif.
+- Technical metadata, navigation, section numbers, states and buttons: Hack.
+- Body copy is at least 16px on mobile, with a 55–75-character reading measure.
+- Major headings are tightly tracked, upright, left-aligned and allowed to wrap.
+- Mono is never used for long paragraphs.
 
-## Product UI language
-- Every marketing claim should be paired with a real project artefact, process stage, deliverable, or system relationship. Decorative fake dashboards are not allowed.
-- Mono is reserved for paths, labels, status, navigation, and compact controls. Running prose uses `--font-body`.
-- Primary surfaces use `--color-paper`; recessed workbench panels use `--color-paper-2`; borders use `--color-rule`. Shadows are not part of the system.
-- The system is achromatic: graphite replaces blue. Hierarchy comes from scale, surface shifts, rules, and typography.
-- Service cards are deliberately hierarchical: primary directions may span wider tracks; equal-card matrices are not the default.
-- Portfolio entries must foreground concrete scope and deliverables. Use real screenshots only when available; never fabricate product UI or outcomes.
-- Display headings may become monumental and tightly tracked, but remain left/right anchored rather than centred. Their job is brand presence, not decoration.
-- Footer is a genuine end-of-document contact area. Floating docks and slide controls are not part of the continuous website.
+## Components
 
-## Motion stance
-- Conservative — 1 reveal primitive at a time (fade or slide), no bounce/overshoot. No motion library was observed in any studied source (all static screenshots) — default to CSS-only transitions.
-- Reduced-motion fallback · ≤150 ms opacity crossfade.
+- Primary CTA: rectangular, solid ink, paper text, minimum 48px height.
+- Secondary CTA: rectangular outline, transparent paper surface.
+- Cards are content structures made from rules, not floating rounded surfaces.
+- Section labels stack above their headings on mobile; no hanging eyebrow beside
+  a heading at narrow widths.
+- Selected work remains legible without imagery. Future approved screenshots
+  are optional progressive enhancement, never required structure.
+
+## Motion
+
+- One reveal primitive: short opacity + 16px vertical settling.
+- No letter-by-letter typing, parallax, cursor replacement, or perpetual motion.
+- `prefers-reduced-motion` disables reveal transforms and smooth scrolling.
+
+## Content constraints
+
+- No fabricated metrics, testimonials, clients, awards, team size or promises.
+- No Team, pricing, vacancies, SEO/marketing service, or blog in this commercial
+  site version.
+- Arena and TLK may use their existing public links. Do not add outcomes or
+  details without owner confirmation.
+- Telegram bot stays generic until a verified public case is supplied.
+- Preserve the established email, Telegram and GitHub contacts.
+
+## Accessibility and responsive
+
+- Semantic landmarks, one H1, logical H2/H3 structure, skip link.
+- Visible focus states, keyboard-operable language switch and menu, Escape close.
+- Mobile menu locks document scroll while open.
+- Both `html` and `body` use `overflow-x: clip`.
+- Test at 360, 390, 768, 1024, 1440 and 1920px.
+- Hash aliases keep old service links from becoming dead ends on GitHub Pages.
 
 ## Provenance
-- Source mode: image (6 user-attached screenshots)
-- Sources: Balenciaga.com (nav flyout + hero), Awwwards.com (Site of the Day template + jobs card grid), Cantor8.io (hero, ×3 near-duplicate captures), Adoratorio Studio's Awwwards profile capture (monumental grotesk display), Nominal.so (continuous product narrative, retracting header, neutral grid rhythm)
-- Date: 2026-07-19
-- Attestation: image mode — emitted without asking, per protocol (user owns the screenshots)
-- Confidence: tokens are a considered synthesis estimated from source-image colour bands and structural patterns, not extracted CSS (these are third-party sites, not project code). Fonts are role-based with named candidates from the Hallmark canon, not confirmed exact faces. Radius and structural rhythm observations are direct/accurate — they came from pixels, not markdown.
 
-## Notes — anti-patterns flagged, do NOT carry over
-- Don't apply one blanket border-radius everywhere. The whole point of this DNA is the two-tier system: `--radius-pill` only on genuine interactive controls, `--radius-card` on content surfaces, `--radius-frame: 0` on structural chrome (page frame, dividers, large content blocks). Collapsing this into a single radius value defeats the "VS Code" read this file is aiming for.
-- Don't copy Cantor8's full-viewport saturated-blue flood. The site is intentionally achromatic; paper stays near-neutral/light and emphasis is graphite.
-- Don't copy Balenciaga's zero-radius-everywhere wholesale — it's a valid reference for how "sharp" the frame/structural layer can go, but the brief explicitly wants selective rounding, not austerity everywhere.
-
-## Exports
-The `:root` token block in `index.html` is the source of truth for this one-file build.
-For Tailwind v4 `@theme`, DTCG `tokens.json`, or shadcn/ui CSS variables, ask
-*"extend design.md with Tailwind exports"* (or the format you want) — Hallmark
-will append them per `export-formats.md`.
+- DDC terminal identity: existing project and owner-authored Figma prototype.
+- Frost Ember: positioning principle only — integrated product partner instead
+  of separate executors. No structure, visual assets, or copy were reproduced.
+- Master brief received 2026-07-20 and treated as the current design direction.

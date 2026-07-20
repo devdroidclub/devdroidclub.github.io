@@ -1,28 +1,32 @@
-# devdroid.club (d.d.c.)
+# devdroid.club (DDC)
 
-> Product-minded software studio. Clients bring a goal — more leads, less manual work, an idea to validate; the studio helps decide what's worth building, builds it AI-accelerated, and keeps improving it after launch with real data. Seven services — product, websites, bots, AI, MVP, support, audit — plus a portfolio and a blog. Single-page site with client-side hash routing — all section content is present in the initial HTML document, nothing is loaded dynamically. Bilingual (EN default, RU toggle) — the toggle swaps text client-side; this file describes the EN content.
+> DDC is an independent digital product studio. It shapes, designs, builds and
+> evolves digital products with a trusted team assembled around each challenge.
+> The client works with one product partner responsible for product decisions,
+> team coordination, delivery and communication.
+
+The site is a bilingual EN/RU static single-page document. English is the
+default; the selected language is saved locally. All content is present in the
+initial HTML and navigation uses GitHub Pages-safe hash anchors.
 
 ## Sections
-- [Home](https://devdroidclub.github.io/#/): Positioning (product-minded studio) and a THINK → BUILD → GROW overview linking into the services below
-- [Services overview](https://devdroidclub.github.io/#/services): Index of all seven services below
-- [Product](https://devdroidclub.github.io/#/product): Product development and guidance — the entry point service. Turns business goals into measurable product goals, maps users/scenarios/hypotheses, cuts scope, writes specs, sets up post-launch metrics. Deliverables: a roadmap, specs, and a partner who owns the outcome. Every other build-stage service (websites, bots, AI, MVP) links back here — each engagement starts with a product session that agrees the goal and success metric before development begins.
-- [Websites](https://devdroidclub.github.io/#/websites): Full-cycle sites from business goals and brand book to a deployed, SEO-ready build. Deliverables: live site, source code and design files, SEO baseline report, deployment notes.
-- [Bots](https://devdroidclub.github.io/#/bots): Telegram bots and n8n automations connected to CRM/Jira/spreadsheets/databases. Deliverables: working bot or automation, flow diagram, handed-over access.
-- [AI](https://devdroidclub.github.io/#/ai): Chatbots trained on the client's own data, scoped internal AI agents, automation of one defined repetitive process, advisory on where AI fits. Deliverables: working bot/agent, maintenance docs, a written note on its limits.
-- [MVP](https://devdroidclub.github.io/#/mvp): A working prototype of an idea's minimum core, shipped to real users and iterated on their feedback. Deliverables: live prototype, source code, a short read on initial usage.
-- [Support](https://devdroidclub.github.io/#/support): Ongoing bug fixes, small-to-medium features, uptime/error monitoring, dependency and security patching for a live product. Deliverables: maintained product, change log, direct access to the person doing the work.
-- [Audit](https://devdroidclub.github.io/#/audit): UX, SEO, and data-quality review, benchmarked against what "working well" means for the specific product. Deliverables: written report, prioritized fix list ranked by impact. The audit is separate from implementing the fixes.
-- [Process](https://devdroidclub.github.io/#/process): The 7-stage pipeline every project follows — analysis, designing, programming, testing, publishing, promoting, support — shown as a terminal-style diagram. Stages are skipped when a project genuinely doesn't need them (e.g. a bot skips app-store publishing).
-- [Portfolio](https://devdroidclub.github.io/#/portfolio): Case studies, each tagged /websites — Ice Arena Solntsevo (arena-solntsevo.ru, sports complex, B2C) and Pacific Logistics / TLC (pacificlog.ru, logistics, B2B). Both full-cycle: client supplied business goals and a brand book, the studio delivered analysis, UX, design, build and launch.
-- [Blog](https://devdroidclub.github.io/#/blog): Short, sourced posts on AI and web development, tied back to the studio's service lines. Individual posts at /#/blog/<slug>.
 
-## Notes for automated readers
-- No prices or timelines are published on the service pages by design.
-- Service copy avoids promotional adjectives; claims are scoped to what's concretely delivered.
-- /product is the recommended starting point for a prospective client with an unscoped or ambiguous need; the other six services assume the "what to build" question is already answered.
-- The blog cites its sources; treat blog content as commentary on third-party trend reports, not primary research by the studio.
+- [Home](https://devdroidclub.github.io/#/): product-studio positioning and primary action.
+- [Our model](https://devdroidclub.github.io/#/model): one product partner and a trusted flexible team.
+- [Capabilities](https://devdroidclub.github.io/#/services): product discovery, UX/UI, web products, mobile applications, bots/integrations and ongoing development.
+- [Selected work](https://devdroidclub.github.io/#/work): Arena, TLK and a generic Telegram bot case, without unverified metrics.
+- [Process](https://devdroidclub.github.io/#/process): discover, define, design, assemble, build, verify, launch and evolve.
+- [Contact](https://devdroidclub.github.io/#/contact): project brief form with an email-client fallback and copy action.
+
+## Notes
+
+- DDC is not presented as a marketing agency, marketplace or fixed outsourced team.
+- The site publishes no prices, timelines, team size, testimonials or fabricated metrics.
+- The public capabilities do not include SEO promotion, advertising, SMM or marketing support.
+- Arena and TLK retain their established public links; no unverified outcomes are claimed.
 
 ## Contact
+
 - GitHub: https://github.com/devdroidclub
 - Telegram: https://t.me/stasivstas
 - Email: stas.stasiv@gmail.com

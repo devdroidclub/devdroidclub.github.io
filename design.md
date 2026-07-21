@@ -28,7 +28,7 @@ single-file build in `index.html` is the implementation source of truth.
   --rule:   oklch(72% 0.006 95);
   --focus:  oklch(34% 0.01 95);
 
-  --sans: "Helvetica Neue", Arial, system-ui, sans-serif;
+  --sans: "IBM Plex Sans", "Helvetica Neue", Arial, system-ui, sans-serif;
   --mono: "Hack", "DejaVu Sans Mono", ui-monospace, monospace;
 }
 ```
@@ -38,12 +38,12 @@ font values do not appear ad hoc outside the token block.
 
 ## Typography
 
-- Display and body: Helvetica Neue / Arial / system sans-serif.
+- Display and body: IBM Plex Sans with Helvetica Neue / Arial as fallbacks.
 - Brand accent: the canonical `assets/ddc-wordmark.svg` contains the Mincho
   `d.d.c.` wordmark. Use this asset in the header and footer; do not recreate
   the mark as live page text or pair it with a second DDC title in the footer.
-- Display and body remain Helvetica Neue / Arial in both languages so the
-  hierarchy is consistent and Cyrillic never falls into an uncontrolled face.
+- Display and body use IBM Plex Sans in both languages so the hierarchy is
+  consistent and the Cyrillic shares the same technical voice as the Latin.
 - Technical metadata, navigation, section numbers, states and buttons: Hack.
 - Body copy is at least 16px on mobile, with a 55–75-character reading measure.
 - Major headings are tightly tracked, upright, left-aligned and allowed to wrap.

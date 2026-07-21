@@ -83,6 +83,22 @@ font values do not appear ad hoc outside the token block.
 - Russian is the default language; an explicitly saved English preference is
   respected on later visits.
 
+## Privacy and analytics
+
+- The operator is shown as provided by the owner: Стасив С.В., Москва,
+  `stas.stasiv@gmail.com`.
+- The personal-data policy is available from the form and the footer in a
+  square, native dialog that follows the site's paper-and-ink system.
+- Form consent is a separate required checkbox. It must not be folded into the
+  submit button label or treated as implied by submission.
+- Yandex Metrika counter `110906380` is optional. Its script, Webvisor and
+  clickmap must not load until the visitor explicitly allows analytics.
+- Closing the first-visit notice means "necessary settings only". Store the
+  decision locally and do not show the notice again unless site data is cleared.
+- Necessary local storage is limited to the language and analytics choice.
+- If the form delivery mechanism or analytics provider changes, update the
+  policy and consent wording in the same release.
+
 ## Accessibility and responsive
 
 - Semantic landmarks, one H1, logical H2/H3 structure, skip link.

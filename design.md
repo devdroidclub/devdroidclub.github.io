@@ -89,6 +89,11 @@ font values do not appear ad hoc outside the token block.
   `stas.stasiv@gmail.com`.
 - The personal-data policy is available from the form and the footer in a
   square, native dialog that follows the site's paper-and-ink system.
+- Keep the first-visit notice compact and service-like: a small label, one
+  explanatory sentence and the decision controls. Do not use a display-sized
+  consent headline.
+- In the desktop footer, the policy link belongs in the lower-right utility
+  position; the brand statement and copyright remain lower-left.
 - Form consent is a separate required checkbox. It must not be folded into the
   submit button label or treated as implied by submission.
 - Yandex Metrika counter `110906380` is optional. Its script, Webvisor and
